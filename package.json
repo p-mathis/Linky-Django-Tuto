@@ -1,7 +1,8 @@
 {
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.18",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.1.18",
+    "hugo-extended": "0.152.2"
   },
   "dependencies": {
     "flowbite": "^4.0.1"
