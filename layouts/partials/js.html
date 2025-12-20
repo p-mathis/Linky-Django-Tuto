@@ -1,0 +1,10 @@
+{{ $flowbite := resources.Get "flowbite/flowbite.min.js" }}
+{{ if hugo.IsDevelopment }}
+  <script src="{{ $flowbite.RelPermalink }}"></script>
+{{ else }}
+  {{ with $flowbite | fingerprint }}
+    <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+  {{ end }}
+{{ end }}
+
+

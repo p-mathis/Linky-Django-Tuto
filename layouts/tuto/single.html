@@ -1,0 +1,26 @@
+{{ define "main" }}
+<!-- Contenu principal - prend toute la largeur restante après le sidebar -->
+<main class="flex-1 min-w-0 overflow-y-auto">
+  <!-- Article -->
+  <article class="w-full">
+    <header class="mb-8">
+      <h1 class="hidden lg:block w-full uppercase text-center py-8 lg:py-16 bg-mycolor-700 text-mywhite mb-8">
+        {{ .Title }}
+      </h1>
+      {{ if .Params.description }}
+      <div class="max-w-4xl mx-auto px-4">
+        <p class="text-xl text-mycolor-600 dark:text-gray-300">{{ .Params.description }}</p>
+      </div>
+      {{ end }}
+    </header>
+
+    <div class="max-w-4xl mx-auto px-4 pb-8">
+      <div class="prose prose-lg dark:prose-invert max-w-none">
+        {{ .Content }}
+      </div>
+      {{ partial "footerTuto.html" . }}
+    </div>
+
+  </article>
+</main>
+{{ end }}

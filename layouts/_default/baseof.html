@@ -1,0 +1,22 @@
+<!DOCTYPE html >
+<html lang="{{.Site.LanguageCode}}">
+<head>
+    {{ block "head" .}} 
+        {{ partial "head.html" .}}
+    {{ end }}
+
+</head>
+<body>
+    <div class="min-h-screen flex flex-col"> 
+        <div class="lg:flex flex-1">
+        {{ partial "menu.html" . }}
+
+        {{ block "main" . }}
+        {{ end }}
+    </div>
+    {{ partial "footer.html" . }}
+    </div>
+    {{ partial "js.html" . }}
+    
+</body>
+</html>

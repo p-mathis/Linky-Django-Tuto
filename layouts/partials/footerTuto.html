@@ -1,0 +1,38 @@
+<div class="block w-full">
+<hr class="w-full border-0 h-px bg-mycolor-500 my-2 md:my-4">
+<footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-6">
+  <div class="w-full">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <!-- Lien "Précédent" -->
+      {{ if .PrevInSection }}
+        <a
+          href="{{ .PrevInSection.RelPermalink }}"
+          class="flex items-center mb-4 md:mb-0 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+        >
+          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+          </svg>
+          {{ .PrevInSection.Title }}
+        </a>
+      {{ else }}
+        <div class="w-full md:w-auto mb-4 md:mb-0"></div> <!-- Espace vide si pas de "Précédent" -->
+      {{ end }}
+
+      <!-- Lien "Suivant" -->
+      {{ if .NextInSection }}
+        <a
+          href="{{ .NextInSection.RelPermalink }}"
+          class="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+        >
+          {{ .NextInSection.Title }}
+          <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+          </svg>
+        </a>
+      {{ end }}
+    </div>
+  </div>
+</footer>
+
+
+</div>

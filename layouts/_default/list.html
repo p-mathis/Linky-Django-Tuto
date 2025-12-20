@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="page-list max-w-4xl mx-auto px-4 py-8 space-y-8">
+  <div class="bg-gray-300 text-mycolor-800 text-center py-6 rounded-md shadow-md">
+    <h1 class="text-4xl font-bold mb-8">{{ .Title }}</h1>
+  </div>
+  {{ range .Pages.ByTitle }}
+  <article class="list-item bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-200">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-3">
+      <a href="{{ .RelPermalink }}" class="hover:text-blue-600 transition-colors">
+        {{ .Title }}
+      </a>
+    </h2>
+    
+    <div class="summary text-gray-600 leading-relaxed mb-4 line-clamp-3">
+      {{ .Summary }}
+    </div>
+    
+    <a href="{{ .RelPermalink }}" class="read-more inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors">
+      Lire la suite 
+      <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </a>
+  </article>
+  {{ end }}
+</div>
+{{ end }}

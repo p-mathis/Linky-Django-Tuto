@@ -1,0 +1,32 @@
+<div class="my-6 rounded-lg border border-gray-300 bg-gray-50 overflow-hidden">
+  <div class="bg-gray-200 px-4 py-2 flex justify-between items-center border-b border-gray-300">
+    <span class="font-mono text-sm text-gray-700 font-semibold">📁 Structure du projet</span>
+    <button 
+      class="text-gray-500 hover:text-blue-600 transition-colors p-2 rounded hover:bg-gray-100" 
+      onclick="copyTree(this)" 
+      title="Copier l'arborescence">
+      <svg class="copy-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+      </svg>
+    </button>
+  </div>
+  <pre class="px-4 py-3 font-mono text-sm text-gray-800 overflow-x-auto whitespace-pre">{{ trim .Inner "\n\r" }}</pre>
+</div>
+
+<script>
+function copyTree(button) {
+  const pre = button.closest('div').nextElementSibling;
+  const text = pre.innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const icon = button.querySelector('.copy-icon');
+    const originalHTML = icon.innerHTML;
+    icon.innerHTML = '<path d="M20 6L9 17l-5-5"></path>';
+    icon.setAttribute('stroke', '#10b981');
+    setTimeout(() => {
+      icon.innerHTML = originalHTML;
+      icon.setAttribute('stroke', 'currentColor');
+    }, 2000);
+  });
+}
+</script>

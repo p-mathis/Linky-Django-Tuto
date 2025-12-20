@@ -1,0 +1,9 @@
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>{{ if .Page.Title}}{{ .Page.Title }}{{else}}{{ .Site.Title}}{{end}}</title>
+    {{ with (templates.Defer (dict "key" "global")) }}
+        {{ partial "css.html" . }}
+    {{ end }}    
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/main.css">    
+ 

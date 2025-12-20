@@ -1,0 +1,47 @@
+{{- $src := resources.GetMatch (printf "images/%s" (.Get "src")) -}}
+{{- $alt := .Get "alt" | default "" -}}
+
+{{- $sizes := .Get "sizes" | default "(min-width: 1024px) 100vw, 50vw" -}}
+{{- $widths := slice 320 640 960 1280 1600 -}}
+
+{{- $fallback := $src.Resize "640x jpg" -}}
+
+<picture>
+  <source
+    type="image/webp"
+    srcset="
+      {{- range $widths -}}
+        {{- if ge $src.Width . -}}
+          {{- with $src.Resize (printf "%dx webp" .) -}}
+            {{ .RelPermalink }} {{ .Width }}w,
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    "
+    sizes="{{ $sizes }}"
+  >
+
+  <source
+    type="image/jpeg"
+    srcset="
+      {{- range $widths -}}
+        {{- if ge $src.Width . -}}
+          {{- with $src.Resize (printf "%dx jpg" .) -}}
+            {{ .RelPermalink }} {{ .Width }}w,
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    "
+    sizes="{{ $sizes }}"
+  >
+
+  <img
+    src="{{ $fallback.RelPermalink }}"
+    width="{{ $fallback.Width }}"
+    height="{{ $fallback.Height }}"
+    alt="{{ $alt }}"
+    loading="lazy"
+    decoding="async"
+    class="w-full h-auto animate-fade"
+  >
+</picture>
