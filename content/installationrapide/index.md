@@ -14,7 +14,7 @@ On présuppose que :
 Les commandes sont lancées dans un terminal de la Raspberry.  
 Ce tutoriel est valide pour une installation en triphasé avec horaires jour/nuit. Les codes doivent être adaptés dans une configuration différente.
 {{< line >}}
-### Installation des paquets et logiciels
+## Installation des paquets et logiciels
 - Installer les différents paquets : {{< cmd >}}sudo apt install picocom nodejs npm{{< /cmd >}}
 - Ouvrir le fichier */boot/firmware/config.txt* : {{< cmd >}}sudo nano /boot/firmware/config.txt{{< /cmd >}}
 - Effacer son contenu
@@ -105,8 +105,8 @@ dtoverlay=disable-bt
 - Installer *gunicorn* : {{< cmd >}}pip install gunicorn{{< /cmd >}}
 - Installer *whitenoise* : {{< cmd >}}pip install whitenoise{{< /cmd >}}
 - Installer *python-decouple* : {{< cmd >}}pip install python-decouple{{< /cmd >}}
-### Création du site
-#### models.py - views.py - urls.py
+## Création du site
+### models.py - views.py - urls.py
 - Modifier *models.py* : {{< cmd >}}nano ~/djangoTIC/ticServer/ticapp/models.py{{< /cmd >}}
 - Effacer le contenu puis copier/coller : 
 {{< codefile file="ticServer/ticapp/models.py" lang="python" >}}
@@ -261,7 +261,7 @@ urlpatterns = [
     path('', include('ticapp.urls')),   # new    
 ]
 {{< /codefile >}}
-#### Gabarits (templates)
+### Gabarits (templates)
 - Créer le gabarit *_base.html* : {{< cmd >}}nano ~/djangoTIC/ticServer/ticapp/templates/_base.html{{< /cmd >}}
 - Copier/coller le contenu : 
 {{< codefile file="ticapp/templates/_base.html" lang="html" >}}
@@ -522,7 +522,7 @@ urlpatterns = [
 
 {% endblock content %}
 {{< /codefile >}}
-### Commandes et services
+## Commandes et services
 - Créer la commande *capture_tic* : {{< cmd >}}nano ~/djangoTIC/ticServer/ticapp/management/commands/capture_tic.py{{< /cmd >}}
 - Copier/coller le contenu : 
 {{< codefile file="management/commands/capture_tic.py" lang="python" >}}
@@ -715,7 +715,7 @@ WantedBy=multi-user.target
 {{< cmd >}}sudo systemctl start django-ticserver{{< /cmd >}}  
 {{< cmd >}}sudo systemctl enable tic-capture{{< /cmd >}}  
 {{< cmd >}}sudo systemctl start tic-capture{{< /cmd >}}  
-### Mise en production
+## Mise en production
 - Créer une clé de sécurité : {{< cmd >}}python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'{{< /cmd >}}
 - Créer un fichier *.env* : {{< cmd >}}nano ~/djangoTIC/ticServer/.env{{< /cmd >}}
 - Écrire son contenu en l'adaptant : 
