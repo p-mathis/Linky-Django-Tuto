@@ -138,6 +138,7 @@ Les pages html ont une structure répétitive avec :
 - le contenu spécifique de la page
 - éventuellement un [pied de page (ou footer)](https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/footer) 
 Les éléments communs à chaque page (*head*, menu, pied de page) vont être codés dans un (des) fichier(s) spécifique(s) de façon à ne pas être codés dans toutes les pages.
+- Créer le dossier *templates* : {{< cmd >}}mkdir ~/djangoTIC/ticServer/ticapp/templates{{< /cmd >}}
 
 ### Fichier *_base.html*
 - Créer en écriture : {{< cmd >}}nano ~/djangoTIC/ticServer/ticapp/templates/_base.html{{< /cmd >}}
