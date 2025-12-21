@@ -1,0 +1,10 @@
+{{ $images := split (.Get "images") "," }}
+
+<div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-4">
+  {{ range $images }}
+    {{ $imagePath := trim . " " }}
+    <div class="w-full">
+      {{ $.Page.RenderString (printf `{{< imgResize src="%s" class="w-full h-auto object-cover rounded-lg" >}}` $imagePath) }}
+    </div>
+  {{ end }}
+</div>
