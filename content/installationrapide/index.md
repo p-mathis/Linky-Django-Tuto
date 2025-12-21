@@ -10,8 +10,11 @@ On présuppose que :
 - la Raspberry est accessible en ssh
 - elle est dotée d'une adresse IP locale fixe
 - le module PiTinfo est installé  
-Les commandes sont lancées dans un terminal de la Raspberry.
+- la *téléinformation client* est en mode *standard* (et non *historique*)  
+Les commandes sont lancées dans un terminal de la Raspberry.  
+Ce tutoriel est valide pour une installation en triphasé avec horaires jour/nuit. Les codes doivent être adaptés dans une configuration différente.
 {{< line >}}
+### Installation des paquets et logiciels
 - Installer les différents paquets : {{< cmd >}}sudo apt install picocom nodejs npm{{< /cmd >}}
 - Ouvrir le fichier */boot/firmware/config.txt* : {{< cmd >}}sudo nano /boot/firmware/config.txt{{< /cmd >}}
 - Effacer son contenu
@@ -102,6 +105,8 @@ dtoverlay=disable-bt
 - Installer *gunicorn* : {{< cmd >}}pip install gunicorn{{< /cmd >}}
 - Installer *whitenoise* : {{< cmd >}}pip install whitenoise{{< /cmd >}}
 - Installer *python-decouple* : {{< cmd >}}pip install python-decouple{{< /cmd >}}
+### Création du site
+#### models.py - views.py - urls.py
 - Modifier *models.py* : {{< cmd >}}nano ~/djangoTIC/ticServer/ticapp/models.py{{< /cmd >}}
 - Effacer le contenu puis copier/coller : 
 {{< codefile file="ticServer/ticapp/models.py" lang="python" >}}
@@ -256,6 +261,7 @@ urlpatterns = [
     path('', include('ticapp.urls')),   # new    
 ]
 {{< /codefile >}}
+#### Gabarits (templates)
 - Créer le gabarit *_base.html* : {{< cmd >}}nano ~/djangoTIC/ticServer/ticapp/templates/_base.html{{< /cmd >}}
 - Copier/coller le contenu : 
 {{< codefile file="ticapp/templates/_base.html" lang="html" >}}
@@ -317,7 +323,7 @@ urlpatterns = [
         </div>
     </nav>
     {{< /codefile >}}
-- Télécharger l'image "linkylogo.png" : {{< cmd >}}wget -O ~/djangoTIC/ticServer/ticapp/static/images/linkylogo.png httpsSPECIFIER-ICI-ADRESSE{{< /cmd >}}
+- Télécharger l'image "linkylogo.png" : {{< cmd >}}wget -O ~/djangoTIC/ticServer/ticapp/static/images/linkylogo.png https://linky-tuto.netlify.app/images/linkylogo.png{{< /cmd >}}
 - Créer le gabarit *index.html* : {{< cmd >}}nano djangoTIC/ticServer/ticapp/templates/index.html{{< /cmd >}}
 - Copier/coller le contenu : 
 {{< codefile file="ticapp/templates/index.html" lang="html" >}}
@@ -516,6 +522,7 @@ urlpatterns = [
 
 {% endblock content %}
 {{< /codefile >}}
+### Commandes et services
 - Créer la commande *capture_tic* : {{< cmd >}}nano ~/djangoTIC/ticServer/ticapp/management/commands/capture_tic.py{{< /cmd >}}
 - Copier/coller le contenu : 
 {{< codefile file="management/commands/capture_tic.py" lang="python" >}}
@@ -708,6 +715,7 @@ WantedBy=multi-user.target
 {{< cmd >}}sudo systemctl start django-ticserver{{< /cmd >}}  
 {{< cmd >}}sudo systemctl enable tic-capture{{< /cmd >}}  
 {{< cmd >}}sudo systemctl start tic-capture{{< /cmd >}}  
+### Mise en production
 - Créer une clé de sécurité : {{< cmd >}}python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'{{< /cmd >}}
 - Créer un fichier *.env* : {{< cmd >}}nano ~/djangoTIC/ticServer/.env{{< /cmd >}}
 - Écrire son contenu en l'adaptant : 
@@ -864,5 +872,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 - Effectuer les migrations :  
 {{< cmd >}}python ~/djangotTIC/ticServer/manage.py makemigrations{{< /cmd >}}  
 {{< cmd >}}python ~/djangotTIC/ticServer/manage.py migrate{{< /cmd >}} 
-- Reconfigurer les fichiers statiques : {{< cmd >}}python ~/djangotTIC/ticServer/manage.py collectstatic --noinput{{< /cmd >}}  
+- Reconfigurer les fichiers statiques : {{< cmd >}}python ~/djangotTIC/ticServer/manage.py collectstatic --noinput{{< /cmd >}} 
+- Rebouter la Raspberry : {{< cmd >}}sudo reboot{{< /cmd >}}
 - Sauf erreur ou omission, le site est visible à l'adresse *192.168.x.x:8000*

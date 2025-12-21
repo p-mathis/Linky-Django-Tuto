@@ -212,8 +212,9 @@ Les éléments communs à chaque page (*head*, menu, pied de page) vont être co
 - Dans un premier temps, on ne lance pas ce menu dans le fichier {{< focus >}}_base.html{{< /focus >}} ; effectivement, cela engendrerait un bogue, les différentes url du menu n'étant pas encore créées.
 - Le code du menu est standard, s'adaptant aux écrans de petite taille (*responsive*) ; il aurait pu être amélioré en codant l'affichage de la liste des entrées. Comme il y a relativement peu de pages, le choix paresseux a été de tout écrire en dur.
 #### Image logo
-Pour agrémenter le menu, une image a été insérée : {{< focus >}}linkylogo.png{{< /focus >}}. Cette image doit être copiée dans le dossier {{< focus >}}~/djangoTIC/ticServer/ticapp/static/images{{< /focus >}}
-- Télécharger l'image "linkylogo.png" : {{< cmd >}}wget -O ~/djangoTIC/ticServer/ticapp/static/images/linkylogo.png httpsSPECIFIER-ICI-ADRESSE{{< /cmd >}}
+Pour agrémenter le menu, une image a été insérée : {{< focus >}}linkylogo.png{{< /focus >}}. Cette image doit être copiée dans le dossier {{< focus >}}~/djangoTIC/ticServer/ticapp/static/images{{< /focus >}}.  
+- Utiliser la commande [wget](https://doc.ubuntu-fr.org/wget)
+- Télécharger l'image "linkylogo.png" : {{< cmd >}}wget -O ~/djangoTIC/ticServer/ticapp/static/images/linkylogo.png https://linky-tuto.netlify.app/images/linkylogo.png{{< /cmd >}}
 
 ### Fichier *index.html*
 - Créer en écriture : {{< cmd >}}nano djangoTIC/ticServer/ticapp/templates/index.html{{< /cmd >}}
