@@ -5,7 +5,7 @@ title = 'Partie 3 : Capture des Données'
 +++
 {{< line >}}
 ## Structure des données
-La TéléInformation Client envoie en continu les données du compteur Linky. Ces données sont structurées sous forme de trames. Chaque trame est délimitée par un caractère de début STX (b'\x02') et un caractère de fin ETX (b'\x03').
+La TéléInformation Client envoie en continu les données du compteur Linky. Ces données sont structurées sous forme de trames. Chaque trame est délimitée par un caractère de début {{< focus >}}STX (b'\x02'){{< /focus >}} et un caractère de fin {{< focus >}}ETX (b'\x03'){{< /focus >}}.
 Au sein de chaque trame, des étiquettes vont s'afficher avec, en correspondance, les valeurs attribuées à ces étiquettes. La liste des étiquettes varie selon que l'on est en mode *historique* ou *standard*, selon que l'on est en monophasé ou en triphasé, selon que l'on bénéficie ou non d'un tarif heures pleines / heures creuses.
 La liste des étiquettes est disponible chez [Enedis](https://www.enedis.fr/media/2035/download).  
 

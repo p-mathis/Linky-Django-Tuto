@@ -41,6 +41,6 @@ Ces informations sont directement lisibles sur le compteur Linky lui-même, mais
 ## Résultats
 - Le but est d'afficher diverses données sur des pages internet
 - Par exemple : l'intensité instantanée soutirée, phase par phase si on est en triphasé : 
-<div class="w-2/3 md:w-1/3 pt-4 pl-2">
-{{< imgResize src=tic_instantane.jpg alt="consommation instantanée en watt sur un compteur linky" >}}
+<div class="w-full md:w-2/3 lg:w-1/2 xl:1/3 pt-4 md:p-2">
+{{< imgResize src=tic_instant.jpg alt="consommation instantanée en watt sur un compteur linky" >}}
 </div>

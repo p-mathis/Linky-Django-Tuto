@@ -55,7 +55,7 @@ title = 'Partie 1 : Mise en place'
 
 {{< line >}}
 ## Brancher la Raspberry
-- Une fois toutes les connexions faites, brancher la Raspberry
+- Une fois toutes les connexions réalisées, brancher la Raspberry
 - Cette installation étant faite, toutes les autres opérations se font depuis un ordinateur 
 
 {{< line >}}

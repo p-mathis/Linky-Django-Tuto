@@ -90,7 +90,7 @@ cd ~/djangoTIC
 
 ### Créer l'application *ticapp*
 - Dans le projet {{< focus >}}ticServer{{< /focus >}}on crée une application que l'on va appeler {{< focus >}}ticapp{{< /focus >}}
-- Si on décide de changer le nom de cette application, il convient de **ne pas mettre de majuscule** dans ce nom, pour éviter des conflits avec les paramétrages qui vont être créés par Django
+- Si on décide de changer le nom de cette application, **ne pas mettre de majuscule** dans ce nom, pour éviter des conflits avec les paramétrages qui vont être créés par Django
 - Vérifier qu'on est bien dans le dossier qui contient le fichier {{< focus >}}manage.py{{< /focus >}} et, si besoin, s'y placer : {{< cmd >}}cd ~/djangoTIC/ticServer{{< /cmd >}}
 - Lancer la commande de création de l'application : {{< cmd >}}python manage.py startapp ticapp{{< /cmd >}}
 - Django a créé un dossier {{< focus >}}ticapp{{< /focus >}} dans le dossier {{< focus >}}djangoTIC/ticServer{{< /focus >}}
@@ -222,7 +222,7 @@ Pour que la commande soit prise en compte il faut :
 **On peut tout à fait se contenter de suivre cette procédure.**
 Il est cependant possible de simplifier le lancement de la commande en modifiant le fichier {{< focus >}}package.json{{< /focus >}} :
 - Ouvrir le fichier en écriture : {{< cmd >}}nano ~/djangoTIC/ticServer/package.json{{< /cmd >}}
-- Ajouter les lignes (on est dans un json, donc attention aux virgules) : 
+- Ajouter les lignes (on est dans un [json](https://fr.wikipedia.org/wiki/JavaScript_Object_Notation), donc attention aux virgules) : 
 {{< codefile file="ticServer/package.json" lang="json" >}}
 ,
 "scripts": {

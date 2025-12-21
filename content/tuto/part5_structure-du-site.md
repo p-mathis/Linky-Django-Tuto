@@ -10,7 +10,7 @@ title = 'Partie 5 : Structure Du Site'
 - [mozilla](https://developer.mozilla.org/fr/docs/Learn_web_development/Extensions/Server-side/Django)
 ### Mode url - view - template
 Django fonctionne selon le mode [MTV (model/view/template)](https://www.tresfacile.net/architecture-mtv-de-django/#1) :
-- Une {{< focus >}}URL{{< /focus >}} appelle une {{< focus >}}view{{< /focus >}} ; la {{< focus >}}view{{< /focus >}} traite la logique et renvoie à l'affichage dans le navigateur un {{< focus >}}template{{< /focus >}}
+- Une {{< focus >}}URL{{< /focus >}} appelle une {{< focus >}}view{{< /focus >}} ; la {{< focus >}}view{{< /focus >}} traite la logique et renvoie à l'affichage dans le navigateur un {{< focus >}}template{{< /focus >}}  
 Pour chaque page que nous souhaitons afficher il faut donc : 
 - créer une vue dans {{< focus >}}~/djangoTIC/ticServer/ticapp/views.py{{< /focus >}} sous forme d'une [fonction](https://courspython.com/fonctions.html)
 - créer une url dans {{< focus >}}~/djangoTIC/ticServer/ticapp/urls.py{{< /focus >}} qui sera spécifique pour la vue
@@ -58,9 +58,9 @@ def index(request):
     return render(request, 'index.html', context)
 {{< /codefile >}}
 ### Remarques sur le code 
-- Pour simplifier la gestion des dates, on utilise le module {{< focus >}}timezone{{< /focus >}} de {{< focus >}}django.utils{{< /focus >}} ; il faut donc importer ce module :  
+- Pour simplifier la gestion des dates, on utilise le module {{< focus >}}timezone{{< /focus >}} de {{< focus >}}django.utils{{< /focus >}} ; il faut importer ce module :  
 {{< cmd >}}from django.utils import timezone{{< /cmd >}}
-- On cherche le dernier enregistrement dans la base de données : {{< focus >}}data = Data.objects.last(){{< /focus >}} ; il faut donc importer notre modèle {{< focus >}}Data{{< /focus >}} :  
+- On cherche le dernier enregistrement dans la base de données : {{< focus >}}data = Data.objects.last(){{< /focus >}} ; il faut importer notre modèle {{< focus >}}Data{{< /focus >}} :  
 {{< cmd >}}from .models import Data{{< /cmd >}}
 - On formate les différentes valeurs de manière à remplacer les séparateurs de milliers {{< focus >}},{{< /focus >}} (format anglo-saxon) par un espace
 - On retourne un dictionnaire {{< focus >}}values{{< /focus >}} et la date/heure actuelle (le contexte) vers le gabarit {{< focus >}}index.html{{< /focus >}}
