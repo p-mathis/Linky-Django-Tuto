@@ -29,7 +29,7 @@ Ces informations sont directement lisibles sur le compteur Linky lui-même, mais
 - Une alternative : utiliser un disque SSD de petite capacité avec un boîtier externe et faire le boot directement depuis le SSD ; la longévité du système est nettement augmentée
 - Dans le cas présent, une carte SD 64Go a été utilisée
 ### L'optocoupleur
-- L'[optocoupleur](https://fr.wikipedia.org/wiki/Photocoupleur#:~:text=Un%20photocoupleur%2C%20ou%20optocoupleur%2C%20est,l'anglais%20optocoupler%20ou%20optoisolator.) récupère les données du TIC
+- L'[optocoupleur](https://fr.wikipedia.org/wiki/Photocoupleur#:~:text=Un%20photocoupleur%2C%20ou%20optocoupleur%2C%20est,l'anglais%20optocoupler%20ou%20optoisolator.) récupère les données de la TIC
 - Plutôt que de monter soi-même son propre optocoupleur, le plus simple est d'acheter un module (shield) déjà monté / soudé. 
 - Le module [PiTinfo](https://hallard.me/pitinfov12-light/) est disponible pour un coût modeste chez [Tindle](https://www.tindie.com/products/hallard/pitinfo/) et fonctionne parfaitement
 
@@ -41,6 +41,6 @@ Ces informations sont directement lisibles sur le compteur Linky lui-même, mais
 ## Résultats
 - Le but est d'afficher diverses données sur des pages internet
 - Par exemple : l'intensité instantanée soutirée, phase par phase si on est en triphasé : 
-<div class="w-full md:w-2/3 lg:w-1/2 xl:1/3 pt-4 md:p-2">
+<div class="w-full md:w-2/3 lg:w-1/2 xl:1/3 pt-4 md:pt-8">
 {{< imgResize src=tic_instant.jpg alt="consommation instantanée en watt sur un compteur linky" >}}
 </div>

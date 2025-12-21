@@ -43,7 +43,7 @@ ii  python3-venv                                     3.11.2-1+b1                
 ii  python3.11-venv                                  3.11.2-6+deb12u6                          arm64        Interactive high-level object-oriented language (pyvenv binary, version 3.11)
 {{< /cmdNocopy >}}
 cela signifie que {{< focus >}}python3-venv{{< /focus >}}est installé
-- Dans la négative, l'installer en tapant : {{< cmd >}}sudo apt install python3-venv{{< /cmd >}} *(au besoin après avoir mis à jour les différents paquets avec {{< cmd >}}sudo apt update{{< /cmd >}})*
+- Dans la négative, l'installer en tapant : {{< cmd >}}sudo apt install python3-venv{{< /cmd >}}  *(au besoin après avoir mis à jour les différents paquets avec {{< cmd >}}sudo apt update{{< /cmd >}})*
 #### Créer le dossier de travail
 - Il convient, en premier lieu, de créer le dossier dans lequel sera hébergé le site
 - On va appeler, par exemple, ce dossier {{< focus >}}djangoTIC{{< /focus >}}
