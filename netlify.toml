@@ -3,3 +3,4 @@
     command = "hugo --gc --minify"
 [environment]
     HUGO_VERSION = "0.152.2"
+    HUGO_EXTENDED = "true"
