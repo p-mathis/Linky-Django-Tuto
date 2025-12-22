@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://linky-tuto.netlify.app/sitemap.xml
