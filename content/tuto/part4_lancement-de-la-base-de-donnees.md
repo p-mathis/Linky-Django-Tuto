@@ -51,9 +51,11 @@ class Data(models.Model):
 ### Activer la base de données
 - Le fichier {{< focus >}}models.py{{< /focus >}} ayant été modifié, il faut faire prendre en compte ces modifications par Django
 - Se placer dans le dossier qui contient {{< focus >}}manage.py{{< /focus >}} : {{< cmd >}}cd ~/djangoTIC/ticServer{{< /cmd >}}
-- Lancer les deux commandes suivantes : 
+- Lancer les deux commandes suivantes :  
 {{< cmd >}}
 python manage.py makemigrations
+{{< /cmd >}}  
+{{< cmd >}}
 python manage.py migrate
 {{< /cmd >}}
 
