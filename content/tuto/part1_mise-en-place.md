@@ -2,6 +2,7 @@
 date = '2025-12-15T22:36:31+01:00'
 draft = false
 title = 'Partie 1 : Mise en place'
+description = "Activation du ssh sur une raspberry pi ; mise en place d’un module (shield) PiTinfo sur le GPIO ; connexion au compteur Linky  avec utilisation du mode standard"
 +++
 
 {{< line >}}

@@ -2,6 +2,7 @@
 date = '2025-12-16T22:10:22+01:00'
 draft = false
 title = 'Partie 3 : Capture des Données'
+description = "Structure des données fournies par la TIC d’un Linky ; script de capture des données en ne conservant que les étiquettes souhaitées (triphasé avec mode jour/nuit)"
 +++
 {{< line >}}
 ## Structure des données

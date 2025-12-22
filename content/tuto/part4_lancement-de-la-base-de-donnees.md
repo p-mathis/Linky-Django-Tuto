@@ -2,6 +2,7 @@
 date = '2025-12-17T07:09:22+01:00'
 draft = false
 title = 'Partie 4 : Lancement de la Base de Données'
+description = "Sur Django, activation de la base de données avec utilisation de l’ORM pour stocker les valeurs. Un service systemd lance automatiquement le script de captage"
 +++
 
 {{< line >}}

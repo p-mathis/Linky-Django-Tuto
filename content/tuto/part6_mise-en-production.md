@@ -2,6 +2,7 @@
 date = '2025-12-18T08:54:18+01:00'
 draft = false
 title = 'Partie 6 : Mise en Prodution'
+description = "Mise en production avec gunicorn, whitenoise et un service systemd. Utilisation d’un fichier .env ; modification de settings.py ;  reconfiguration des fichiers statiques"
 +++
 
 {{< line >}}

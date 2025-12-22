@@ -32,3 +32,7 @@ title = 'Data Linky'
   [[module.mounts]]
     source = "node_modules/flowbite/dist"
     target = "assets/flowbite"
+
+[params]
+description = "Tutoriel pour mettre en place un serveur de lecture des données TIC du compteur Linky"
+image = "/images/og/site.png"

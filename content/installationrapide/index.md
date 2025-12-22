@@ -2,6 +2,7 @@
 date = '2025-12-19T18:19:10+01:00'
 draft = false
 title = 'Installation Rapide'
+description = "Installation rapide d'un site django sur une raspberry pour lire les données d'un compteur Linky ; utilisation de picocom (téléinformation client) et  unicorn (serveur)"
 +++
 {{< line >}}
 Ce tutoriel permet d'installer rapidement les éléments nécessaires sur la Raspberry.  
