@@ -1,6 +1,12 @@
 [build]
     publish = "public"
     command = "hugo --gc --minify"
+
 [build.environment]
     HUGO_VERSION = "0.152.2"
     HUGO_EXTENDED = "true"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
