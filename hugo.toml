@@ -1,4 +1,4 @@
-baseURL = 'https://linky-tuto.netlify.app/'
+baseURL = 'https://linky-tuto.netlify.app'
 languageCode = 'fr-fr'
 title = 'Data Linky'
 

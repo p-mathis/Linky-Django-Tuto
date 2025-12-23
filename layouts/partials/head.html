@@ -1,31 +1,32 @@
-  
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>{{ if .Page.Title}}{{ .Page.Title }}{{else}}{{ .Site.Title}}{{end}}</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
 
-    <!-- Meta description -->
-    {{- $description := .Description | default site.Params.description -}}
-    <meta name="description" content="{{ $description }}">
+<!-- Meta description -->
+{{- $description := .Description | default site.Params.description -}}
+<meta name="description" content="{{ $description }}">
 
-    <!-- Canonical -->
-    <link rel="canonical" href="{{ .Permalink }}">
+<!-- Canonical -->
+<link rel="canonical" href="{{ .Permalink }}">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}">
-    <meta property="og:description" content="{{ $description }}">
-    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
-    <meta property="og:url" content="{{ .Permalink }}">
-    <meta property="og:image" content="{{ site.Params.image | absURL }}">
+<!-- Open Graph -->
+<meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:image" content="{{ site.Params.image | absURL }}">
+<meta property="og:image:alt" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="{{ site.Title }}">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ .Title }}">
-    <meta name="twitter:description" content="{{ $description }}">
-    <meta name="twitter:image" content="{{ site.Params.image | absURL }}">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}">
+<meta name="twitter:description" content="{{ $description }}">
+<meta name="twitter:image" content="{{ site.Params.image | absURL }}">
+<meta name="twitter:image:alt" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">
 
-    <!-- Stylesheets -->
-    {{ with (templates.Defer (dict "key" "global")) }}
-        {{ partial "css.html" . }}
-    {{ end }}    
-   
- 
+<!-- Stylesheets -->
+{{ with (templates.Defer (dict "key" "global")) }}
+    {{ partial "css.html" . }}
+{{ end }}
