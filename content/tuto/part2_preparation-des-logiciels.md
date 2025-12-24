@@ -253,7 +253,7 @@ Si on veut éviter d'être nécessairement dans le dossier {{< focus >}}djangoTI
 alias tailwind-dev='cd /home/pi/djangoTIC/ticServer && npm run dev'
 {{< /codefile >}}
 - Recharger le fichier {{< focus >}}.bashrc{{< /focus >}} : {{< cmd >}}source ~/.bashrc{{< /cmd >}}
-- Depuis n'importe quel dossier on lance la commande : {{< cmd >}}tailwind-dev{{< /cmd >}}
+- Depuis n'importe quel dossier on lance la commande : {{< cmd >}}tailwind-dev{{< /cmd >}}  
 **Quoi qu'il en soit, le plus judicieux est d'ouvrir deux terminaux :**
 - un sur lequel on lance {{< focus >}}django{{< /focus >}} pour visualiser le site internet (obligatoirement en environnement virtuel)
 - un sur lequel on lance {{< focus >}}tailwind{{< /focus >}} pour observer en direct les modifications éventuelles du css (en environnement virtuel ou non)
