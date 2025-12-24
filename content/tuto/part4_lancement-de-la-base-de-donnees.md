@@ -12,7 +12,7 @@ Les données qu'on souhaite stocker dans la base de données sont les suivantes 
 - LTARF 
 - EAST, EASF01, EASF02  
 - EASD01, EASD02, EASD03, EASD04 
-- SINSTS, SINSTS1, SINSTS2, SNSIST3 
+- SINSTS, SINSTS1, SINSTS2, SNSIST3  
 Au besoin, en fonction des informations désirées, il est possible de recueillir d'autres champs.
 {{< line >}}
 ## Fichier models.py
