@@ -2,7 +2,7 @@
 date = '2025-12-15T11:20:34+01:00'
 draft = false
 title = 'Tutoriel Linky'
-description = "Tutoriel pour capturer les données téléinformation client (TIC) d’un compteur linky, les stocker dans une base de données et les lire sur un serveur Django"
+description = "Tutoriel pour capturer avec une raspberry pi les données téléinformation client (TIC) d’un compteur linky, les stocker dans une base de données et les lire sur un serveur Django"
 +++
 
 {{< line >}}
