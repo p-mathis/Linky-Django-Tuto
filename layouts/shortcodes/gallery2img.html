@@ -1,11 +1,11 @@
 {{ $images := split (.Get "images") "," }}
 {{ $alts := split (.Get "alts") "," }}
 
-<div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-4">
+<div class="grid grid-cols-2  md:border border-gray-200 gap-2 rounded-lg p-2 md:p-4">
   {{ range $index, $image := $images }}
     {{ $imagePath := trim $image " " }}
     {{ $altText := trim (index $alts $index) " " }}
-    <div class="w-full">
+    <div class="w-full  border-1 border-myred">
       {{ $.Page.RenderString (printf `{{< imgResize src="%s" alt="%s" class="w-full h-auto object-cover rounded-lg" >}}` $imagePath $altText) }}
     </div>
   {{ end }}

@@ -9,6 +9,10 @@ description = "Tutoriel pour capturer avec une raspberry pi les données téléi
 
 Les compteurs Linky disposent d'une fonction de TéléInformation Client (TIC), qui va donner en continu un certain nombre d'informations, notamment la puissance apparente instantanée soutirée, les index d'énergie consommée.  
 Ces informations sont directement lisibles sur le compteur Linky lui-même, mais cette lecture est, à l'évidence, malaisée. Le but de ce tutoriel est de mettre en place un système de lecture fiable et confortable.
+
+{{< line >}}
+
+{{< gallery2img images="LinkyPuissance-1.jpg, LinkyPuissance-2.jpg" alts="puissance soutirée par le compteur linky en instantané pour chaque phase et total, puissance soutirée par le compteur linky en instantané pour chaque phase et total">}}
 {{< line >}}
 ## Objectif
 - Capturer les données fournies en continu par le compteur Linky
