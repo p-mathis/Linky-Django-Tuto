@@ -74,7 +74,7 @@ python manage.py migrate
 - Transformer ces dossiers en modules python en y créant un fichier {{< focus >}}__init__.py{{< /focus >}} :  
 {{< cmd >}}touch ~/djangoTIC/ticServer/ticapp/management/__init__.py{{< /cmd >}}  
 {{< cmd >}}touch ~/djangoTIC/ticServer/ticapp/management/commands/__init__.py{{< /cmd >}}
-- Ouvrir le fichier {{< focus >}}capture_tic{{< /focus >}} : {{< cmd >}}nano ~/djangoTIC/ticServer/ticapp/management/commands/capture_tic.py{{< /cmd >}}
+- Créer et ouvrir le fichier {{< focus >}}capture_tic{{< /focus >}} : {{< cmd >}}nano ~/djangoTIC/ticServer/ticapp/management/commands/capture_tic.py{{< /cmd >}}
 - Copier le code suivant :  
 {{< codefile file="management/commandes/capture_tic.py" lang="python" >}}
 from django.core.management.base import BaseCommand

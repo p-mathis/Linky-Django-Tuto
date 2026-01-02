@@ -61,7 +61,7 @@ def index(request):
 ### Remarques sur le code 
 - Pour simplifier la gestion des dates, on utilise le module {{< focus >}}timezone{{< /focus >}} de {{< focus >}}django.utils{{< /focus >}} ; il faut importer ce module :  
 {{< cmd >}}from django.utils import timezone{{< /cmd >}}
-- On cherche le dernier enregistrement dans la base de données : {{< focus >}}data = Data.objects.last(){{< /focus >}} ; il faut importer notre modèle {{< focus >}}Data{{< /focus >}} :  
+- On cherche le dernier enregistrement dans la table de la base de données : {{< focus >}}data = Data.objects.last(){{< /focus >}} ; il faut importer notre modèle {{< focus >}}Data{{< /focus >}} :  
 {{< cmd >}}from .models import Data{{< /cmd >}}
 - On formate les différentes valeurs de manière à remplacer les séparateurs de milliers {{< focus >}},{{< /focus >}} (format anglo-saxon) par un espace
 - On retourne un dictionnaire {{< focus >}}values{{< /focus >}} et la date/heure actuelle (le contexte) vers le gabarit {{< focus >}}index.html{{< /focus >}}
