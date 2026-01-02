@@ -49,7 +49,7 @@ class Data(models.Model):
 - date est un *string*, qui comprend 13 caractères ; c'est une date du type H251228062542 pour le 28 décembre 2025 à 6H25mn42s
 - ltarf est un *string* de longueur maximale 16 caractères
 - les autres champs sont des données numériques entières
-### Activer la base de données
+### Créer la table dans base de données
 - Le fichier {{< focus >}}models.py{{< /focus >}} ayant été modifié, il faut faire prendre en compte ces modifications par Django
 - Se placer dans le dossier qui contient {{< focus >}}manage.py{{< /focus >}} : {{< cmd >}}cd ~/djangoTIC/ticServer{{< /cmd >}}
 - Lancer les deux commandes suivantes :  
@@ -59,11 +59,12 @@ python manage.py makemigrations
 {{< cmd >}}
 python manage.py migrate
 {{< /cmd >}}
+- Le modèle s'appelant ***Data*** et l'application ***ticapp***, ces commandes vont créer la table ***ticapp_data*** dans la base de données
 
 {{< line >}}
 ## Remplir la base de données
 ### Introduction
-- Une fois créée la base de données avec ses colonnes bien définies, il faut lui fournir les données.  
+- Une fois créée la table {{< focus >}}ticapp_data{{< /focus >}} avec ses colonnes bien définies, il faut lui fournir les données
 - Pour cela il faut adapter le fichier de capture de données {{< focus >}}~/djangoTIC/scripts/readTIC_test.py{{< /focus >}} de manière à ce que les données soient versées dans la base de données.  
 - Plutôt que d'utiliser du [langage SQL](https://fr.wikipedia.org/wiki/Structured_Query_Language) brut pour rentrer ces données, il est préférable de laisser Django manipuler celles-ci en utilisant son [ORM](https://fr.wikipedia.org/wiki/Mapping_objet-relationnel), qui va directement faire le lien entre notre code python et la base de données
 - Ceci est d'autant plus nécessaire que la gestion des dates dans la base de données peut poser des problèmes de [dates *naïves* et *avisées*](https://docs.python.org/fr/3.5/library/datetime.html) (naive/aware) avec risque d'erreur dans les calculs de temps écoulé entre deux dates
