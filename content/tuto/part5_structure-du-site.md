@@ -216,7 +216,7 @@ Les éléments communs à chaque page (*head*, menu, pied de page) vont être co
 #### Image logo
 Pour agrémenter le menu, une image a été insérée : {{< focus >}}linkylogo.png{{< /focus >}}. Cette image doit être copiée dans le dossier {{< focus >}}~/djangoTIC/ticServer/ticapp/static/images{{< /focus >}}.  
 - Utiliser la commande [wget](https://doc.ubuntu-fr.org/wget)
-- Télécharger l'image "linkylogo.png" : {{< cmd >}}wget -O ~/djangoTIC/ticServer/ticapp/static/images/linkylogo.png https://linky-tuto.netlify.app/images/linkylogo.png{{< /cmd >}}
+- Télécharger l'image *linkylogo.png* : {{< cmd >}}wget -O ~/djangoTIC/ticServer/ticapp/static/images/linkylogo.png https://linky-tuto.netlify.app/images/linkylogo.png{{< /cmd >}}
 
 ### Fichier *index.html*
 - Créer en écriture : {{< cmd >}}nano djangoTIC/ticServer/ticapp/templates/index.html{{< /cmd >}}
