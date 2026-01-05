@@ -71,19 +71,19 @@ def capture_trame():
                     return trame        
 
 def parse_trame(trame):
-    data = trame[1:-1].decode('ascii', errors='ignore')                 # décodage du binaire en ascii
+    data = trame[1:-1].decode('ascii', errors='ignore')         # décodage du binaire en ascii
     print(f'type de data = {type(data)}')
-    lines = data.split('\r\n')                                          # transformer la chaîne de caractères en une succession de lignes
+    lines = data.split('\r\n')                                  # transformer la chaîne de caractères en une succession de lignes
     print(f'type de lines = {type(lines)}')
     dico = {}
-    for line in lines:                                                  # traiter les lignes une par une ; les éléments de lignes sont séparés par des tabulations
-        key = line.split('\t')[0]                                       # capter l'étiquette de la ligne
-        value = line.split('\t')[1] if '\t' in line else ''             # capter la valeur de l'étiquette
-        dico[key] = value                                               # ajouter l'étiquette et sa valeur dans le dictionnaire dico
+    for line in lines:                                          # traiter les lignes une par une ; les éléments de lignes sont séparés par des tabulations
+        key = line.split('\t')[0]                               # capter l'étiquette de la ligne
+        value = line.split('\t')[1] if '\t' in line else ''     # capter la valeur de l'étiquette
+        dico[key] = value                                       # ajouter l'étiquette et sa valeur dans le dictionnaire dico
         # print(f'Clé: {key}, Valeur: {value}')
-    subDico = {key: dico[key] for key in listItems if key in dico}      # sélectionner les étiquettes et les valeurs qui sont dans la liste listitems
+    subDico = {key: dico[key] for key in listItems if key in dico}  # sélectionner les étiquettes et les valeurs qui sont dans la liste listitems
         
-    if checkIfDictFull(dico, listItems):
+    if checkIfDictFull(dico, listItems):            # Vérifier que toutes les étiquette sont présentes
         print('Dictionnaire complet capturé')
         # return subDico
     else:

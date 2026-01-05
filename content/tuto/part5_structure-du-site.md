@@ -30,7 +30,7 @@ La page d'accueil {{< focus >}}index.html{{< /focus >}} va afficher :
 - les puissances apparentes soutirées actuellement pour chaque phase
 - le type de tarif : heures creuses / heures pleines
 - la date donnée par le Linky (sous forme yymmjjhhmmss)
-### fonction *index*
+### Fonction *index*
 - Le code de la fonction index est le suivant : 
 {{< codefile file="ticServer/ticapp/views.py" lang="python" >}}
 def index(request):

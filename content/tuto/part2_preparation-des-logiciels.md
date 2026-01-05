@@ -219,7 +219,7 @@ Plutôt que d'écrire soi-même le {{< focus >}}css{{< /focus >}}, le plus simpl
 Pour modifier en continu le fichier {{< focus >}}output.css{{< /focus >}}, il faut donc lancer dans un terminal la commande {{< focus >}}npx etc...{{< /focus >}}.  
 Pour que la commande soit prise en compte il faut :
 - être en environnement virtuel ou pas !
-- être dans le bon dossier : {{< focus >}}~/djangotTIC/ticServer{{< /focus >}} car c'est dans ce dossier qu'est placé le fichier {{< focus >}}package.json{{< /focus >}}
+- être dans le bon dossier : {{< focus >}}~/djangotTIC/ticServer{{< /focus >}} car c'est dans ce dossier qu'est placé le fichier {{< focus >}}package.json{{< /focus >}}  
 **On peut tout à fait se contenter de suivre cette procédure.**
 Il est cependant possible de simplifier le lancement de la commande en modifiant le fichier {{< focus >}}package.json{{< /focus >}} :
 - Ouvrir le fichier en écriture : {{< cmd >}}nano ~/djangoTIC/ticServer/package.json{{< /cmd >}}
