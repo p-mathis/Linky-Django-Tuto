@@ -97,7 +97,7 @@ class Linky2(models.Model):
 - On crée trois commandes dans {{< focus >}}~/djangoTIC/ticServer/ticapp/management/commands{{< /focus >}}
 - La première commande se réfèrera au compteur *Linky0* relié par le *PiTinfo* : {{< cmd >}}nano ~/djangoTIC/ticServer/ticapp/management/commands/capture_tic0.py"{{< /cmd >}}
 - Le fichier sera de ce type :
-{{< codefile file="management/comands/capture_tic0" lang="python">}}
+{{< codefile file="management/commands/capture_tic0" lang="python">}}
 from django.core.management.base import BaseCommand
 from ticapp.models import Linky0     # on importe le modèle du compteur Linky0
 from django.utils import timezone
@@ -193,8 +193,8 @@ def index(request):
     
     # les trois valeurs à récupérer
     instant0 = format(data0.sinsts, ',').replace(',', ' ')
-    instant1 = format(data1.sinsts1, ',').replace(',', ' ')
-    instant2 = format(data2.sinsts2, ',').replace(',', ' ')
+    instant1 = format(data1.sinsts, ',').replace(',', ' ')
+    instant2 = format(data2.sinsts, ',').replace(',', ' ')
     
     # création du dictionnaire
     values = {
