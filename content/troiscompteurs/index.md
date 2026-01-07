@@ -90,7 +90,7 @@ class Linky2(models.Model):
 - Initialiser les tables **en environnement virtuel** :  
 {{< cmd >}}cd ~/djangoTIC/ticServer{{< /cmd >}}  
 {{< cmd >}}python manage.py makemigrations{{< /cmd >}}  
-{{< cmd >}}python migrate{{< /cmd >}}
+{{< cmd >}}python manage.py migrate{{< /cmd >}}
 
 ### Créer les commandes pour stocker les données
 - Voir le tutoriel [Lancement de la base de données]({{< relref "tuto//part4_lancement-de-la-base-de-donnees.md#remplir-la-base-de-données" >}})
