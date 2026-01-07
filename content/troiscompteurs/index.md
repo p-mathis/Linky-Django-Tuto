@@ -156,7 +156,7 @@ After=network.target
 Type=simple
 User=pi
 WorkingDirectory=/home/pi/djangoTIC/ticServer
-# commande captre_tic0 du Linky0
+# commande capture_tic0 du Linky0
 ExecStart=/home/pi/djangoTIC/venv/bin/python manage.py capture_tic0      
 Restart=always
 RestartSec=10
