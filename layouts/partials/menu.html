@@ -57,6 +57,62 @@
         </a>
       </li>
       {{ end }}
+            <!-- Lien vers la page troiscompteurs -->
+      {{ with .Site.GetPage "/troiscompteurs" }}
+      <li>
+        <a href="{{ .RelPermalink }}" 
+           class="flex items-center p-2 rounded-lg group {{ if eq $.RelPermalink .RelPermalink }}text-white bg-mycolor-600{{ else }}text-mycolor-700 hover:bg-mycolor-200 hover:text-mycolor-800{{ end }} dark:text-gray-200 dark:hover:bg-gray-700">
+            <svg class="w-5 h-5 {{ if .IsHome }}text-white{{ else }}text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white{{ end }}"
+            viewBox="0 0 20 20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg">
+            <defs />
+              <!-- Raspberry centrale -->
+              <!-- Linky gauche -->
+              <!-- Linky droite -->
+              <!-- Connexions -->
+              <g>
+                <rect
+                  x="7"
+                  y="7"
+                  width="6"
+                  height="6"
+                  id="rect1" />
+                <rect
+                  x="1"
+                  y="4"
+                  width="4"
+                  height="4"
+                  id="rect2" />
+                <rect
+                  x="15"
+                  y="4"
+                  width="4"
+                  height="4"
+                  id="rect3" />
+                <line
+                  x1="5"
+                  y1="6"
+                  x2="7"
+                  y2="10"
+                  id="line3" />
+                <line
+                  x1="15"
+                  y1="6"
+                  x2="13"
+                  y2="10"
+                  id="line4" />
+              </g>
+            </svg>
+          <span class="ms-3 text-sm whitespace-nowrap">Multi-Linky</span>
+        </a>
+      </li>
+      {{ end }}
 
     </ul>
   </div>
@@ -140,6 +196,64 @@
         </a>
       </li>
       {{ end }}
+
+      <!-- Lien vers troiscompteurs -->
+      {{ with .Site.GetPage "/troiscompteurs" }}
+      <li>
+        <a href="{{ .RelPermalink }}" 
+           class="flex items-center p-2 rounded-lg group {{ if .IsHome }}text-white bg-mycolor-600{{ else }}text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700{{ end }}">
+            <svg class="w-5 h-5 {{ if .IsHome }}text-white{{ else }}text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white{{ end }}"
+            viewBox="0 0 20 20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg">
+            <defs />
+              <!-- Raspberry centrale -->
+              <!-- Linky gauche -->
+              <!-- Linky droite -->
+              <!-- Connexions -->
+              <g>
+                <rect
+                  x="7"
+                  y="7"
+                  width="6"
+                  height="6"
+                  id="rect1" />
+                <rect
+                  x="1"
+                  y="4"
+                  width="4"
+                  height="4"
+                  id="rect2" />
+                <rect
+                  x="15"
+                  y="4"
+                  width="4"
+                  height="4"
+                  id="rect3" />
+                <line
+                  x1="5"
+                  y1="6"
+                  x2="7"
+                  y2="10"
+                  id="line3" />
+                <line
+                  x1="15"
+                  y1="6"
+                  x2="13"
+                  y2="10"
+                  id="line4" />
+              </g>
+            </svg>
+          <span class="ms-3 text-sm">Multi-Linky</span>
+        </a>
+      </li>
+      {{ end }}
+
     </ul>
   </div>
 </div>

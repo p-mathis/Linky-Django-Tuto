@@ -49,7 +49,7 @@ class Data(models.Model):
 - date est un *string*, qui comprend 13 caractères ; c'est une date du type H251228062542 pour le 28 décembre 2025 à 6H25mn42s
 - ltarf est un *string* de longueur maximale 16 caractères
 - les autres champs sont des données numériques entières
-### Créer la table dans base de données
+### Créer la table dans la base de données
 - Le fichier {{< focus >}}models.py{{< /focus >}} ayant été modifié, il faut faire prendre en compte ces modifications par Django
 - Se placer dans le dossier qui contient {{< focus >}}manage.py{{< /focus >}} : {{< cmd >}}cd ~/djangoTIC/ticServer{{< /cmd >}}
 - Lancer les deux commandes suivantes :  

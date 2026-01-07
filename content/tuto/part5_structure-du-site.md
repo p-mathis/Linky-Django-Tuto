@@ -219,7 +219,7 @@ Pour agrémenter le menu, une image a été insérée : {{< focus >}}linkylogo.p
 - Télécharger l'image *linkylogo.png* : {{< cmd >}}wget -O ~/djangoTIC/ticServer/ticapp/static/images/linkylogo.png https://linky-tuto.netlify.app/images/linkylogo.png{{< /cmd >}}
 
 ### Fichier *index.html*
-- Créer en écriture : {{< cmd >}}nano djangoTIC/ticServer/ticapp/templates/index.html{{< /cmd >}}
+- Créer en écriture : {{< cmd >}}nano ~/djangoTIC/ticServer/ticapp/templates/index.html{{< /cmd >}}
 - Copier le code : 
 {{< codefile file="ticapp/templates/index.html" lang="html" >}}
 {% extends "_base.html" %}

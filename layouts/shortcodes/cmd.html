@@ -1,6 +1,6 @@
 <span class="inline-flex items-center  px-2  bg-mycolor-200 text-myred rounded font-mono text-sm border border-mycolor-400">
   <span class="text-green-400 pr-2">$</span>
-  <span>{{ trim .Inner "\n\r" }}</span>
+  <span>{{ trim .Inner "\n\r" | markdownify }}</span>
   <button 
     class="pl-2 text-gray-400 hover:text-gray-600 transition-colors" 
     onclick="copyCmdInline(this)" 
