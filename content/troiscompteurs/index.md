@@ -39,7 +39,7 @@ SUBSYSTEM=="tty", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", ATTRS{seria
 - Ces règles vont créer deux fichiers dans */dev* :  
 {{< cmdNocopyGoLine >}}/dev/teleinfo_linky_1  
 /dev/teleinfo_linky_2{{< /cmdNocopyGoLine >}}
-- C'est par ces noms *teleinfo_linky_xx* que l'on va appeler les données *TIC* dans les scripts *Django*
+- C'est par ces noms *teleinfo_linky_xx* qu'on va appeler les données *TIC* dans les scripts *Django*
 ### Recharger udev
 - On recharge udev avec les commandes :  
 {{< cmd >}}sudo udevadm control --reload-rules{{< /cmd>}}  
