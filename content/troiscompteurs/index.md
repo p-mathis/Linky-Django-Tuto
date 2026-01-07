@@ -18,7 +18,7 @@ Il est donc possible que certaines commandes ne renvoient pas le résultat escom
 - Brancher le premier module *uTeleInfo*
 - Dans le dossier {{< focus >}}/dev{{< /focus >}}, le périphérique devrait apparaître sous la forme {{< focus >}}ttyUSBxx{{< /focus >}}, par exemple *ttyUSB0*
 - Vérifier en lançant dans un terminal connecté en *ssh* à la Raspberry : {{< cmd >}}ls -l /dev/ttyUSB*{{< /cmd >}}
-- Récupérer les informations USB du *uTeleInfo* : {{< cmd >}}udevadm info -a -n /dev/ttyUSBx{{< /cmd >}} *(remplacer x par sa valeur numérique)*
+- Récupérer les informations USB du *uTeleInfo* : {{< cmd >}}udevadm info -a -n /dev/ttyUSBx{{< /cmd >}}  *(remplacer x par sa valeur numérique)*
 - Dans la sortie, repérer des lignes spécifiques du type *(les valeurs sont des exemples)*:  
 {{< cmdNocopyGoLine >}}ATTRS{idVendor}=="10c4"  
 ATTRS{idProduct}=="ea60"  
@@ -39,7 +39,7 @@ SUBSYSTEM=="tty", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", ATTRS{seria
 - Ces règles vont créer deux fichiers dans */dev* :  
 {{< cmdNocopyGoLine >}}/dev/teleinfo_linky_1  
 /dev/teleinfo_linky_2{{< /cmdNocopyGoLine >}}
-- C'est par ces noms *teleinfo_linky_1* que l'on va appeler les données *TIC* dans les scripts *Django*
+- C'est par ces noms *teleinfo_linky_xx* que l'on va appeler les données *TIC* dans les scripts *Django*
 ### Recharger udev
 - On recharge udev avec les commandes :  
 {{< cmd >}}sudo udevadm control --reload-rules{{< /cmd>}}  
@@ -78,7 +78,7 @@ class Linky1(models.Model):
     east = models.IntegerField(blank=True, null=True)                   # Energie active soutirée Fournisseur Consommation totale
     // la suite des étiquettes fournies par ce compteur //
 
-class Linky1(models.Model):
+class Linky2(models.Model):
     ## Modèle pour le compteur relié au teleinfo_linky_2
     dateTime = models.DateTimeField(auto_now_add=True, db_index=True)   # la date et l'heure données par l'ordinateur
     date = models.CharField(max_length=13,blank=True, null=True)        # la date et l'heure données par le TIC
