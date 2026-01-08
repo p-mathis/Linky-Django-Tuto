@@ -72,8 +72,8 @@ python manage.py migrate
 ### Création de la commande *capture_tic*
 - Créer les dossiers nécessaires : {{< cmd >}}mkdir -p ~/djangoTIC/ticServer/ticapp/management/commands{{< /cmd >}}
 - Transformer ces dossiers en modules python en y créant un fichier {{< focus >}}__init__.py{{< /focus >}} :  
-{{< cmd >}}touch ~/djangoTIC/ticServer/ticapp/management/__init__.py{{< /cmd >}}  
-{{< cmd >}}touch ~/djangoTIC/ticServer/ticapp/management/commands/__init__.py{{< /cmd >}}
+{{< cmd >}}touch ~/djangoTIC/ticServer/ticapp/management/\_\_init\_\_.py{{< /cmd >}}  
+{{< cmd >}}touch ~/djangoTIC/ticServer/ticapp/management/commands/\_\_init\_\_.py{{< /cmd >}}
 - Créer et ouvrir le fichier {{< focus >}}capture_tic{{< /focus >}} : {{< cmd >}}nano ~/djangoTIC/ticServer/ticapp/management/commands/capture_tic.py{{< /cmd >}}
 - Copier le code suivant :  
 {{< codefile file="management/commandes/capture_tic.py" lang="python" >}}
@@ -131,7 +131,7 @@ class Command(BaseCommand):
                     value = parts[1] if len(parts) > 1 else ''
                     dico[key] = value
             
-            # Ne retourner que si toutes les clés nécessaires sont présentes
+            # Ne renvoyer que si toutes les clés nécessaires sont présentes
             if self.checkIfDictFull(dico, self.listItems):
                 subDico = {key: dico[key] for key in self.listItems if key in dico}
                 return subDico

@@ -90,13 +90,13 @@ def parse_trame(trame):
         print('Dictionnaire incomplet')
 
 try:
-    while True:                                                         # boucle d'impression des données
+    while True:                                            # boucle d'impression des données
         trame = capture_trame()
         donnees = parse_trame(trame)
         print(donnees)
-        time.sleep(1)                                                   # Pause entre les captures
+        time.sleep(1)                                       # Pause entre les captures
 except KeyboardInterrupt:
-    print("\nArrêt du script par l'utilisateur.")                       # Ctrl+C pour interrompre le script
+    print("\nArrêt du script par l'utilisateur.")           # Ctrl+C pour interrompre le script
 except Exception as e:
     print(f"Erreur : {e}")
 {{< /codefile >}}

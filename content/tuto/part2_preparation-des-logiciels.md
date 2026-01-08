@@ -28,7 +28,7 @@ description = "Installation de Django, tailwind-css et flowbite sur une Raspberr
 - Dans le terminal lancer la commande de lecture des données : {{< cmd >}}picocom -b 9600 -d 7 -p e -f h /dev/ttyAMA0{{< /cmd >}}
 - Les données de la TIC défilent en continu dans le terminal
 - Pour interrompre, taper : {{< focus >}}Ctrl-A{{< /focus >}} {{< focus >}}Ctrl-Q{{< /focus >}}
-- La signification des drapeaux de la commande sont disponibles sur la [page man](https://manpages.ubuntu.com/manpages/bionic/man1/picocom.1.html)
+- La signification des drapeaux de la commande sont disponibles sur la [page man](https://manpages.ubuntu.com/manpages/bionic/man1/picocom.1.html#options)
 - Il convient d'être en 9600 bauds (et non 1200), d'avoir une parité paire ({{< focus >}}-p e{{< /focus >}}) et d'être à 7 bits par caractère ({{< focus >}}-d 7{{< /focus >}}), ainsi que le préconise Enedis dans sa [notice de téléinformation](https://www.enedis.fr/media/2035/download)
 {{< line >}}
 ## Installer Django
@@ -192,7 +192,7 @@ Plutôt que d'écrire soi-même le {{< focus >}}css{{< /focus >}}, le plus simpl
 - Se mettre **en environnement virtuel** dans le dossier {{< focus >}}~/djangoTIC/ticServer{{< /focus >}}
 - Taper la commande : {{< cmd >}}npm install flowbite{{< /cmd >}}
 - Dans le dossier {{< focus >}}node_modules{{< /focus >}} un dossier {{< focus >}}flowbite{{< /focus >}} (entre autres) a été créé
-- Pour des questions de chemin des fichiers statiques, il peut être préférable de copier le dosser {{< focus >}}flowbite{{< /focus >}} de {{< focus >}}nodes_modules{{< /focus >}} vers {{< focus >}}static{{< /focus >}} : {{< cmd >}}cp -r ~djangoTIC/ticServer/node_modules/flowbite ~djangoTIC/ticServer/ticapp/static/{{< /cmd >}}
+- Pour des questions de chemin des fichiers statiques, il peut être préférable de copier le dosser {{< focus >}}flowbite{{< /focus >}} de {{< focus >}}nodes_modules{{< /focus >}} vers {{< focus >}}static{{< /focus >}} : {{< cmd >}}cp -r ~/djangoTIC/ticServer/node_modules/flowbite ~/djangoTIC/ticServer/ticapp/static/{{< /cmd >}}
 - Modifier le fichier {{< focus >}}input.css{{< /focus >}} en l'ouvrant en écriture : {{< cmd >}}nano ~/djangoTIC/ticServer/ticapp/static/src/input.css{{< /cmd >}}
 - Ajouter les lignes : 
 

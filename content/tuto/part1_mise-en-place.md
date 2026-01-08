@@ -20,7 +20,7 @@ description = "Activation du ssh sur une raspberry pi ; mise en place d’un mo
 - On procède à l'installation en introduisant les différents paramètes souhaités
 ### Activer le ssh
 - C'est une étape fondamentale, puisque toute la mise en place des différents codes va se faire en ssh
-- Il convient que le mot de passe de la Raspberry soit **consistant**
+- Le mot de passe de la Raspberry doit être **consistant**
 - Il est préférable de changer le port ssh externe au niveau du routeur, de manière à éviter les tentatives d'intrusion externe par le port par défaut
 - Il est utile de donner une IP locale fixe à sa Raspberry, en sachant que la Raspberry a deux IP : une pour le WiFi, une pour l'éthernet
 - Des conseils sont disponibles sur un tutoriel de [mise en place de caméras de suveillance](https://djangocamera.netlify.app/tuto/part1/#modifications-au-niveau-de-la-box)
