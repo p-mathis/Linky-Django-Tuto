@@ -9,7 +9,7 @@ description = "Installation de Django, tailwind-css et flowbite sur une Raspberr
 ## Vérifier le fonctionnement du module PiTinfo
 ### Se connecter en ssh à la Raspberry
 - Sur son ordinateur, ouvrir un terminal de commande (la méthode est différente selon l'OS utilisé : [consulter cette page](https://djangocamera.netlify.app/tuto/part1/#connexion-ssh-%C3%A0-la-raspberry))
-- Taper : {{< cmd >}}ssh pi@<local IP Raspberry>{{< /cmd >}}
+- Taper : {{< cmd >}}ssh pi@\<local IP Raspberry\>{{< /cmd >}}
 - Admettons que l'IP locale de la Raspberry soit {{< focus >}}192.168.1.120{{< /focus >}}, taper : {{< focus >}}ssh pi@192.168.1.120{{< /focus >}} (à condition, bien sûr, d'avoir laissé {{< focus >}}pi{{< /focus >}} comme nom d'utilisateur de la Raspberry)
 - Entrer le mot de passe de la Raspberry
 - Si besoin, autoriser la connexion en acceptant la création d'une clé
