@@ -30,7 +30,7 @@ Ces informations sont directement lisibles sur le compteur Linky lui-même, mais
 - On peut estimer que les données récoltées par la base de données seront de l'ordre de 1 à 2 Go par an
 - Le problème de la taille de la carte n'est pas tant lié à sa capacité de stockage qu'à l'usure des blocs
 - Il est donc conseillé de prendre une carte de 32 Go, idéalement 64
-- Surtout il convient d'avoir une carte de [type industrielle ou High Endurance](https://www.kingston.com/fr/memory-cards?card%20type=microsd)
+- Surtout il est préférable d'avoir une carte de [type industrielle ou High Endurance](https://www.kingston.com/fr/memory-cards?card%20type=microsd)
 - Une alternative : utiliser un disque SSD de petite capacité avec un boîtier externe et faire le boot directement depuis le SSD ; la longévité du système est nettement augmentée
 - Dans le cas présent, une carte SD 64Go a été utilisée
 ### L'optocoupleur

@@ -17,7 +17,7 @@ description = "Installation de Django, tailwind-css et flowbite sur une Raspberr
 - [picocom](https://micropython.fr/05.outils/terminal_serie/picocom/) est un émulateur de terminal qui va permettre de communiquer avec le PiTinfo
 - Installer {{< focus >}}picocom{{< /focus >}} en tapant dans le terminal connecté à la Raspberry en ssh : {{< cmd >}}sudo install picocom {{< /cmd >}}
 ### Modifier le fichier /boot/firmware/config.txt
-- Pour assurer un bon fonctionnement de la commande {{< focus >}}picocom{{< /focus >}} il est nécessaire de modifier le fichier {{< focus >}}/boot/firmware/config.txt{{< /focus >}}
+- Pour assurer un bon fonctionnement de la commande {{< focus >}}picocom{{< /focus >}} il faut modifier le fichier {{< focus >}}/boot/firmware/config.txt{{< /focus >}}
 - Taper : {{< cmd >}}sudo nano /boot/firmware/config.txt{{< /cmd >}} (obligé d'être en superutilisateur, car le fichier est protégé)
 - Au paragraphe {{< focus >}}All{{< /focus >}} vérifier la valeur de {{< focus >}}enable_uart{{< /focus >}}
 - Elle doit être égale à 1 ; si elle est à 0, la modifier
@@ -29,13 +29,13 @@ description = "Installation de Django, tailwind-css et flowbite sur une Raspberr
 - Les données de la TIC défilent en continu dans le terminal
 - Pour interrompre, taper : {{< focus >}}Ctrl-A{{< /focus >}} {{< focus >}}Ctrl-Q{{< /focus >}}
 - La signification des drapeaux de la commande sont disponibles sur la [page man](https://manpages.ubuntu.com/manpages/bionic/man1/picocom.1.html#options)
-- Il convient d'être en 9600 bauds (et non 1200), d'avoir une parité paire ({{< focus >}}-p e{{< /focus >}}) et d'être à 7 bits par caractère ({{< focus >}}-d 7{{< /focus >}}), ainsi que le préconise Enedis dans sa [notice de téléinformation](https://www.enedis.fr/media/2035/download)
+- Le débit est fixé à 9600 bauds (et non 1200), la parité est paire ({{< focus >}}-p e{{< /focus >}}) et les caractères sont en 7 bits ({{< focus >}}-d 7{{< /focus >}}), ainsi que le préconise Enedis dans sa [notice de téléinformation](https://www.enedis.fr/media/2035/download)
 {{< line >}}
 ## Installer Django
 Pour assurer une visualisation agréable des données, on va ouvrir des pages contenant les informations souhaitées dans un navigateur web. La méthode utilisée, ici, est de passer par un site internet créé avec [Django](https://www.djangoproject.com/).
 ### Création d'un environnement virtuel
 #### *python3-venv* est-il installé ?
-Pour fonctionner efficacement sur une Raspberry, il est souhaitable de se mettre en environnement virtuel. Cet environnement évite les conflits, toujours possibles, entre différentes versions de [Python](https://fr.wikipedia.org/wiki/Python_(langage)). *A priori* la commande pour lancer la création d'un environnement virtuel est installée par défaut.
+Pour fonctionner efficacement sur une Raspberry, *Django* nécessite un environnement virtuel. Cet environnement évite les conflits, toujours possibles, entre différentes versions de [Python](https://fr.wikipedia.org/wiki/Python_(langage)). *A priori* la commande pour lancer la création d'un environnement virtuel est installée par défaut.
 - Vérifier si {{< focus >}}python3-venv{{< /focus >}}est installé en tapant dans le terminal : {{< cmd >}}dpkg -l | grep venv{{< /cmd >}}
 - Si vous avez une réponse du type :
 
@@ -46,7 +46,7 @@ ii  python3.11-venv                                  3.11.2-6+deb12u6           
 cela signifie que {{< focus >}}python3-venv{{< /focus >}}est installé
 - Dans la négative, l'installer en tapant : {{< cmd >}}sudo apt install python3-venv{{< /cmd >}}  *(au besoin après avoir mis à jour les différents paquets avec {{< cmd >}}sudo apt update{{< /cmd >}})*
 #### Créer le dossier de travail
-- Il convient, en premier lieu, de créer le dossier dans lequel sera hébergé le site
+- En premier lieu, créer le dossier dans lequel sera hébergé le site
 - On va appeler, par exemple, ce dossier {{< focus >}}djangoTIC{{< /focus >}}
 - Dans le terminal, taper : {{< cmd >}}mkdir djangoTIC{{< /cmd >}}
 - On vérifie sa création : {{< cmd >}}ls{{< /cmd >}}
@@ -70,7 +70,7 @@ cd ~/djangoTIC
 - *Comme on est en environnement virtuel, inutile de préciser {{< focus >}}python3{{< /focus >}} : il n'y a pas d'ambiguité*
 - Vérifier l'installation : {{< cmd >}}python -m django --version{{< /cmd >}} qui doit renvoyer une sortie du type : {{< focus >}}5.2.9{{< /focus >}} en fonction du nom de la version
 ### Créer le projet Django
-- On va appeler ce projet {{< focus >}}ticServer{{< /focus >}}
+- On appelle ce projet {{< focus >}}ticServer{{< /focus >}}
 - Vérifier qu'on est en environnement virtuel dans le dossier {{< focus >}}djangoTIC{{< /focus >}}
 - Lancer la commande {{< cmd >}}django-admin startproject ticServer{{< /cmd >}}
 - Django a créé un dossier {{< focus >}}ticServer{{< /focus >}}
@@ -90,7 +90,7 @@ cd ~/djangoTIC
 {{< /tree >}}
 
 ### Créer l'application *ticapp*
-- Dans le projet {{< focus >}}ticServer{{< /focus >}}on crée une application que l'on va appeler {{< focus >}}ticapp{{< /focus >}}
+- Dans le projet {{< focus >}}ticServer{{< /focus >}}on crée une application appelée {{< focus >}}ticapp{{< /focus >}}
 - Si on décide de changer le nom de cette application, **ne pas mettre de majuscule** dans ce nom, pour éviter des conflits avec les paramétrages qui vont être créés par Django
 - Vérifier qu'on est bien dans le dossier qui contient le fichier {{< focus >}}manage.py{{< /focus >}} et, si besoin, s'y placer : {{< cmd >}}cd ~/djangoTIC/ticServer{{< /cmd >}}
 - Lancer la commande de création de l'application : {{< cmd >}}python manage.py startapp ticapp{{< /cmd >}}
@@ -149,7 +149,7 @@ DATABASES = {
 {{< /codefile >}}
 - Modifier la valeur de {{< focus >}}LANGUAGE_CODE{{< /focus >}} : {{< focus >}}LANGUAGE_CODE = 'fr'{{< /focus >}}
 - Modifier la valeur de {{< focus >}}TIME_ZONE{{< /focus >}} : {{< focus >}}TIME_ZONE = 'Europe/Paris'{{< /focus >}}
-- Sauvegarder le fichier et quitter  : {{< focus >}}Ctrl-O Entrée Ctrl-X{{< /focus >}}
+- Sauvegarder le fichier et quitter  : {{< focus >}}Ctrl-O{{< /focus >}} {{< focus >}}Entrée{{< /focus >}} {{< focus >}}Ctrl-X{{< /focus >}}
 
 ### Vérifier dans un navigateur
 - Vérifier que l'environnement virtuel est lancé
@@ -170,7 +170,7 @@ DATABASES = {
 Pour personnaliser l'aspect du site qui va afficher les données, on doit utiliser un [fichier css](https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade).  
 Plutôt que d'écrire soi-même le {{< focus >}}css{{< /focus >}}, le plus simple est de passer par un outil de développement dédié. Le choix porte sur [tailwind](https://tailwindcss.com/) et sa bibliothèque intégrée [flowbite](https://flowbite.com/).
 ### Installer nodejs et npm
-- Pour installer {{< focus >}}tailwind{{< /focus >}}et {{< focus >}}flowbite{{< /focus >}} on utilise la commande {{< focus >}}npm{{< /focus >}}
+- Pour installer *tailwind* et *flowbite* on utilise la commande {{< focus >}}npm{{< /focus >}}
 - On installe tout d'abord {{< focus >}}nodejs{{< /focus >}}: {{< cmd >}}sudo apt install nodejs{{< /cmd >}}
 - On vérifie l'installation : {{< cmd >}}node -v{{< /cmd >}} qui renvoie le numéro de version
 - On installe {{< focus >}}npm{{< /focus >}} : {{< cmd >}}sudo apt install npm{{< /cmd >}}
@@ -218,7 +218,7 @@ Plutôt que d'écrire soi-même le {{< focus >}}css{{< /focus >}}, le plus simpl
 ### Simplification de la commande *npx*
 Pour modifier en continu le fichier {{< focus >}}output.css{{< /focus >}}, il faut donc lancer dans un terminal la commande {{< focus >}}npx etc...{{< /focus >}}.  
 Pour que la commande soit prise en compte il faut :
-- être en environnement virtuel ou pas !
+- être ou non en environnement virtuel
 - être dans le bon dossier : {{< focus >}}~/djangotTIC/ticServer{{< /focus >}} car c'est dans ce dossier qu'est placé le fichier {{< focus >}}package.json{{< /focus >}}  
 **On peut tout à fait se contenter de suivre cette procédure.**
 Il est cependant possible de simplifier le lancement de la commande en modifiant le fichier {{< focus >}}package.json{{< /focus >}} :

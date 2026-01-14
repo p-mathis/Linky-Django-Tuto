@@ -54,7 +54,7 @@ SUBSYSTEM=="tty", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", ATTRS{seria
 ## La base de données
 ### Créer les tables de la base de données
 - On a donc trois modules susceptibles de capturer les informations de trois compteurs différents : un PitInfo et deux uTeleInfo
-- Dans {{< focus >}}models.py{{< /focus >}} on crée donc trois classes, chacune correspondant à une table
+- Dans {{< focus >}}models.py{{< /focus >}} on crée trois classes, chacune correspondant à une table
 - Si on décide d'appeler ces tables {{< focus >}}Linky0{{< /focus >}} pour le *PiTinfo* et {{< focus >}}Linky1{{< /focus >}}, {{< focus >}}Linky2{{< /focus >}} pour les 2 *uTeleInfo*, le fichier *models.py* ressemblera à :
 
 {{< codefile file="~/djangoTIC/ticServer/models.py" lang="python">}}

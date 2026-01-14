@@ -9,12 +9,13 @@ description = "Mise en production avec gunicorn, whitenoise et un service system
 
 ## Serveur Gunicorn
 Actuellement, le site fonctionne en passant par le serveur embarqué de Django en tapant, en environnement virtuel, la commande : {{< focus >}}python manage.py runserver 0.0.0.0:8000{{< /focus >}}.
-Il convient de ne plus passer par ce serveur embarqué et d'avoir son propre serveur. Le choix porte sur [Gunicorn](https://pypi.org/project/gunicorn/)
+Il est souhaitable de ne plus passer par ce serveur embarqué et d'avoir son propre serveur. Le choix porte sur [Gunicorn](https://pypi.org/project/gunicorn/)
 <!--more--> 
 ### Installation de Gunicorn
 - Se mettre en environnement virtuel : {{< cmd >}}source /home/pi/djangoTIC/venv/bin/activate{{< /cmd >}}
 - Installer Gunicorn : {{< cmd >}}pip install gunicorn{{< /cmd >}}
 ### Créer un service systemd
+Ce service lance le serveur *gunicorn*
 - Créer en écriture le fichier : {{< cmd >}}sudo nano /etc/systemd/system/django-ticserver.service{{< /cmd >}}
 - Copier/coller le code suivant :
 {{< codefile file="/etc/systemd/system/django-ticserver.service" lang="ini" >}}

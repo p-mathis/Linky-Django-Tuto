@@ -237,7 +237,7 @@ def lasthour(request):                      # new
                 'dateEnd': dateEnd,}
     return render(request, "lasthour.html", context)
 {{< /codefile >}}
-- Créer *ticapp/utls.py* : {{< cmd >}}nano ~/djangoTIC/ticServer/ticapp/urls.py{{< /cmd >}}
+- Créer *ticapp/urls.py* : {{< cmd >}}nano ~/djangoTIC/ticServer/ticapp/urls.py{{< /cmd >}}
 - Copier/coller le contenu : 
 {{< codefile file="ticServer/ticapp/urls.py" lang="python" >}}
 from django.urls import path

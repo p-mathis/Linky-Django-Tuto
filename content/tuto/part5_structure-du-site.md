@@ -12,7 +12,7 @@ description = "Notion de mode MTV. Écriture du fichier views.py avec les diffé
 ### Mode url - view - template
 Django fonctionne selon le mode [MTV (model/view/template)](https://www.tresfacile.net/architecture-mtv-de-django/#1) :
 - Une {{< focus >}}URL{{< /focus >}} appelle une {{< focus >}}view{{< /focus >}} ; la {{< focus >}}view{{< /focus >}} traite la logique et renvoie à l'affichage dans le navigateur un {{< focus >}}template{{< /focus >}}  
-Pour chaque page que nous souhaitons afficher il faut donc : 
+Pour chaque page que nous souhaitons afficher il faut : 
 - créer une vue dans {{< focus >}}~/djangoTIC/ticServer/ticapp/views.py{{< /focus >}} sous forme d'une [fonction](https://courspython.com/fonctions.html)
 - créer une url dans {{< focus >}}~/djangoTIC/ticServer/ticapp/urls.py{{< /focus >}} qui sera spécifique pour la vue
 - créer un gabarit (template) dans {{< focus >}}~/dajngoTIC/ticServer/ticapp/template/{{< /focus >}}, spécifique pour la vue et l'url considérées  
@@ -139,7 +139,7 @@ Les pages html ont une structure répétitive avec :
 - le contenu spécifique de la page
 - éventuellement un [pied de page (ou footer)](https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/footer) 
 Les éléments communs à chaque page (*head*, menu, pied de page) vont être codés dans un (des) fichier(s) spécifique(s) de façon à ne pas être codés dans toutes les pages.
-- Créer le dossier *templates* : {{< cmd >}}mkdir ~/djangoTIC/ticServer/ticapp/templates{{< /cmd >}}
+- Tous ces gabarits sont stockés dans le dossier {{< cmdNocopy >}}~/djangoTIC/ticServer/ticapp/templates{{< /cmdNocopy >}}
 
 ### Fichier *_base.html*
 - Créer en écriture : {{< cmd >}}nano ~/djangoTIC/ticServer/ticapp/templates/_base.html{{< /cmd >}}
@@ -295,7 +295,7 @@ Il s'agit des pages :
 - dernière heure  
 Ces pages affichent la différence de consommation entre un instant {{< focus >}}t_start{{< /focus >}} et un instant {{< focus >}}t_end{{< /focus >}}.
 ### Les fonctions dans *views.py*
-Pour chaque consommation, il convient de faire la différence entre la consommation de début et celle de fin de la période. Ce calcul est donc répétitif et, plutôt que de le copier dans chacune des fonctions, le mieux est de la créer dans un fichier {{< focus >}}utils.py{{< /focus >}} et de l'appeler dans {{< focus >}}views.py{{< /focus >}}
+Pour chaque consommation, on va effectuer la différence entre la consommation de début et celle de fin de la période. Ce calcul est donc répétitif et, plutôt que de le copier dans chacune des fonctions, le mieux est de le créer dans un fichier {{< focus >}}utils.py{{< /focus >}} et de l'appeler dans {{< focus >}}views.py{{< /focus >}}
 #### Fichier *utils.py*
 - Créer le fichier en écriture : {{< cmd >}}nano ~/djangoTIC/ticServer/ticapp/utils.py{{< /cmd >}}
 - Coller/copier le code suivant :
@@ -369,7 +369,9 @@ def jour(request):
 - On utilise la fonction {{< focus >}}conso{{< /focus >}} de {{< focus >}}utils.py{{< /focus >}}
 - Il faut donc l'importer dans {{< focus >}}views.py{{< /focus >}} : {{< cmd >}}from utils import conso{{< /cmd >}}
 - La manipulation des heures est complexe ; {{< focus >}}dateEnd{{< /focus >}} est une heure avisée ; mais si on remplace les heures, minutes, secondes, microsecondes par zéro (pour être à minuit), l'heure devient naïve et il faut la rendre avisée en utilisant la méthode {{< focus >}}localtime{{< /focus >}}
-- Dans d'autres fonctions, on utilisera la méthode {{< focus >}}timedelta{{< /focus >}} de {{< focus >}}datetime{{< /focus >}}, qu'il faut donc importer : {{< cmd >}}from datetime import timedelta{{< /cmd >}}
+### Les autres fonctions
+- Les autres fonctions répondent à la même logique que la fonction *jour*
+- Comme on va utiliser la méthode {{< focus >}}timedelta{{< /focus >}} de {{< focus >}}datetime{{< /focus >}}, il faut l'importer : {{< cmd >}}from datetime import timedelta{{< /cmd >}}
 ### Le nouveau fichier *views.py*
 - Ouvrir en écriture {{< focus >}}views.py{{< /focus >}} : {{< cmd >}}nano ~/djangoTIC/ticServer/ticapp/views.py{{< /cmd >}}
 - Effacer le code existant
@@ -454,7 +456,7 @@ def lasthour(request):                      # new
     path('last24hours', views.last24hours, name='last24hours'),    
     path('hier/', views.hier, name='hier'),
 {{< /codefile >}}
-- Le fichier devient donc celui-ci : 
+- Le fichier devient : 
 {{< codefile file="ticServer/ticapp/urls.py" lang="python" >}}
 from django.urls import path
 from . import views
@@ -468,8 +470,8 @@ urlpatterns = [
 ]
 {{< /codefile >}}
 ### Créer les gabarits (*templates)*
-Pour les 4 fichier html : *jour, lasthour, last24hours, hier*, on va utiliser une présentation commune qui affiche la consommation totale sur la période, la consommation heures pleines, la consommation heures creuses.
-Il est donc judicieux de créer un fichier *html* commun qui va être appelé dans chacune des pages qui sera affichée.
+Pour les 4 fichier html : *jour, lasthour, last24hours, hier*, on va utiliser une présentation commune qui affiche la Sconsommation totale sur la période, la consommation heures pleines, la consommation heures creuses.
+Il est donc judicieux de créer un fichier *html* commun qui va être appelé dans chacune des pages qui sera affichée en utilisant {{< focus >}}{% include "consommation.html" %}{{< /focus >}}.
 #### Fichier *consommation.html*
 - Créer en écriture : {{< cmd >}}nano ~/djangoTIC/ticServer/ticapp/templates/consommation.html{{< /cmd >}}
 - Copier/coller :

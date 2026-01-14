@@ -17,7 +17,7 @@ Au besoin, en fonction des informations désirées, il est possible de recueilli
 {{< line >}}
 ## Fichier models.py
 ### Création du fichier models.py
-- Les données qu'on désire stocker dans la base de données doivent être déclarées dans un fichier {{< focus >}}models.py{{< /focus >}}
+- Ces données doivent être déclarées dans un fichier {{< focus >}}models.py{{< /focus >}}
 - Ce fichier existe déjà dans le dossier {{< focus >}}ticapp{{< /focus >}}
 - Ouvrir le fichier en écriture : {{< cmd >}}nano ~/djangoTIC/ticServer/ticapp/models.py{{< /cmd >}}
 - Copier/coller le contenu suivant : 
@@ -40,7 +40,7 @@ class Data(models.Model):
     sinsts = models.IntegerField(blank=True, null=True)                 # Puissance apparente instantanée soutirée 
     sinsts1 = models.IntegerField(blank=True, null=True)                # Puissance apparente instantanée soutirée phase 1
     sinsts2 = models.IntegerField(blank=True, null=True)                # Puissance apparente instantanée soutirée phase 2
-    sinsts3 = models.IntegerField(blank=True, null=True)                # Puissance apparente 
+    sinsts3 = models.IntegerField(blank=True, null=True)                # Puissance apparente instantanée soutirée phase 3
 {{< /codefile >}}
 - Sauvegarder et quitter
 
@@ -75,7 +75,7 @@ python manage.py migrate
 {{< cmd >}}touch ~/djangoTIC/ticServer/ticapp/management/\_\_init\_\_.py{{< /cmd >}}  
 {{< cmd >}}touch ~/djangoTIC/ticServer/ticapp/management/commands/\_\_init\_\_.py{{< /cmd >}}
 - Créer et ouvrir le fichier {{< focus >}}capture_tic{{< /focus >}} : {{< cmd >}}nano ~/djangoTIC/ticServer/ticapp/management/commands/capture_tic.py{{< /cmd >}}
-- Copier le code suivant :  
+- Copier le code suivant *(adapté du script readTIC_test.py)* :  
 {{< codefile file="management/commandes/capture_tic.py" lang="python" >}}
 from django.core.management.base import BaseCommand
 from ticapp.models import Data
@@ -229,7 +229,7 @@ class Command(BaseCommand):
 - Lancer la commande : {{< cmd >}}python manage.py capture_tic{{< /cmd >}}
 - La base de données commence à stocker les données du Linky
 ### Rendre le captage et le stockage des données pérennes
-- Il convient que captage et stockage se fassent automatiquement au reboutage de la Raspberry
+- Le captage et le stockage doivnet se faire automatiquement au reboutage de la Raspberry
 - Pour cela on crée un [service systemd](https://blog.stephane-robert.info/docs/admin-serveurs/linux/services/)
 - Créer le service : {{< cmd >}}sudo nano /etc/systemd/system/tic-capture.service{{< /cmd >}}
 - Coller le code suivant :
@@ -255,4 +255,4 @@ WantedBy=multi-user.target
 {{< cmd >}}sudo systemctl enable tic-capture{{< /cmd >}}  
 {{< cmd >}}sudo systemctl start tic-capture{{< /cmd >}}
 - Tester le service : {{< cmd >}}sudo systemctl status tic-capture{{< /cmd >}}
-- Le système démarrera automatiquement au boutage de la Raspberry
+- Le système démarrera automatiquement à chaque boutage de la Raspberry

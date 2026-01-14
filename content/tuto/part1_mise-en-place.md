@@ -57,12 +57,12 @@ description = "Activation du ssh sur une raspberry pi ; mise en place d’un mo
 {{< line >}}
 ## Brancher la Raspberry
 - Une fois toutes les connexions réalisées, brancher la Raspberry
-- Cette installation étant faite, toutes les autres opérations se font depuis un ordinateur 
+- Cette installation étant réalisée, toutes les autres opérations se font depuis un ordinateur 
 
 {{< line >}}
 ## Faire mettre le Linky en mode standard
 - Il existe deux modes de fonctionnement d'un compteur Linky : historique et standard
-- Pour obtenir les bonnes informations, il convient que le Linky soit en mode standard
+- Pour obtenir les bonnes informations, le Linky doit être en mode standard
 - Il est possible de savoir en quel mode fonctionne le compteur Linky en faisant défiler les informations au niveau de compteur et en regardant si il affiche {{< focus >}}Mode Historique{{< /focus >}} ou {{< focus >}}Mode Standard{{< /focus >}}
 - La demande de passage du mode historique au mode standard se fait en contactant son fournisseur d'électricité ou bien le gestionnaire du réseau, [Enedis](https://www.enedis.fr/)
 - Cette page internet donne des informations sur les modes [historique et standard](https://support.ecojoko.com/hc/fr/articles/9077627829020-Passage-du-compteur-Linky-en-mode-standard)
