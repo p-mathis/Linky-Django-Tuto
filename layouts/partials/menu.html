@@ -1,7 +1,7 @@
 <!-- layouts/partials/menu.html -->
 
 <!-- Sidebar - Desktop uniquement -->
-<aside id="sidebar-tutorial" class="hidden lg:block lg:w-64 lg:flex-shrink-0 bg-mycolor-100 border-r border-mycolor-200 dark:bg-gray-800 dark:border-gray-700 sticky top-0 h-screen overflow-y-auto">
+<aside id="sidebar-tutorial" class="hidden lg:block lg:w-64 lg:flex-shrink-0 bg-mycolor-100 border-r border-mycolor-200 sticky top-0 h-screen overflow-y-auto">
   <div class="h-full px-3 py-6">
     <h2 class="mb-4 text-lg font-semibold text-mycolor-800 dark:text-white">Navigation</h2>
     
@@ -9,8 +9,8 @@
       <!-- Lien vers l'accueil -->
       <li>
         <a href="{{ .Site.BaseURL }}" 
-           class="flex items-center p-2 rounded-lg group {{ if .IsHome }}text-white bg-mycolor-600{{ else }}text-mycolor-700 hover:bg-mycolor-200 hover:text-mycolor-800{{ end }} dark:text-gray-200 dark:hover:bg-gray-700">
-          <svg class="w-5 h-5 flex-shrink-0 {{ if .IsHome }}text-white{{ else }}text-mycolor-600 group-hover:text-mycolor-800{{ end }} dark:text-gray-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20">
+           class="flex items-center p-2 rounded-lg group {{ if .IsHome }}text-white bg-mycolor-600{{ else }}text-mycolor-700 hover:bg-mycolor-200 hover:text-mycolor-800{{ end }}">
+          <svg class="w-5 h-5 flex-shrink-0 {{ if .IsHome }}text-white{{ else }}text-mycolor-600 group-hover:text-mycolor-800{{ end }}" fill="currentColor" viewBox="0 0 20 20">
             <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
           </svg>
           <span class="ms-3 text-sm whitespace-nowrap">Accueil</span>
@@ -21,8 +21,8 @@
       {{ with .Site.GetPage "/tuto" }}
       <li>
         <a href="{{ .RelPermalink }}" 
-           class="flex items-center p-2 rounded-lg group {{ if eq $.RelPermalink .RelPermalink }}text-white bg-mycolor-600{{ else }}text-mycolor-700 hover:bg-mycolor-200 hover:text-mycolor-800{{ end }} dark:text-gray-200 dark:hover:bg-gray-700">
-          <svg class="w-5 h-5 flex-shrink-0 {{ if eq $.RelPermalink .RelPermalink }}text-white{{ else }}text-mycolor-600 group-hover:text-mycolor-800{{ end }} dark:text-gray-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20">
+           class="flex items-center p-2 rounded-lg group {{ if eq $.RelPermalink .RelPermalink }}text-white bg-mycolor-600{{ else }}text-mycolor-700 hover:bg-mycolor-200 hover:text-mycolor-800{{ end }}">
+          <svg class="w-5 h-5 flex-shrink-0 {{ if eq $.RelPermalink .RelPermalink }}text-white{{ else }}text-mycolor-600 group-hover:text-mycolor-800{{ end }}" fill="currentColor" viewBox="0 0 20 20">
             <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"></path>
           </svg>
           <span class="ms-3 text-sm whitespace-nowrap">Tutoriel</span>
@@ -35,7 +35,7 @@
       {{ if not .IsHome }}
       <li class="ms-6">
         <a href="{{ .RelPermalink }}" 
-           class="flex items-center p-2 rounded-lg group {{ if eq $.RelPermalink .RelPermalink }}text-white bg-mycolor-600{{ else }}text-mycolor-700 hover:bg-mycolor-200 hover:text-mycolor-800{{ end }} dark:text-gray-200 dark:hover:bg-gray-700">
+           class="flex items-center p-2 rounded-lg group {{ if eq $.RelPermalink .RelPermalink }}text-white bg-mycolor-600{{ else }}text-mycolor-700 hover:bg-mycolor-200 hover:text-mycolor-800{{ end }}">
           <span class="flex items-center justify-center w-6 h-6 flex-shrink-0 rounded-full text-xs font-bold {{ if eq $.RelPermalink .RelPermalink }}bg-white text-mycolor-700{{ else }}bg-mycolor-200 text-mycolor-700 group-hover:bg-mycolor-300 group-hover:text-mycolor-800{{ end }} dark:bg-gray-600 dark:text-gray-300">
             {{ substr .File.BaseFileName 4 1 }}
           </span>
@@ -49,7 +49,7 @@
       {{ with .Site.GetPage "/installationrapide" }}
       <li>
         <a href="{{ .RelPermalink }}" 
-           class="flex items-center p-2 rounded-lg group {{ if eq $.RelPermalink .RelPermalink }}text-white bg-mycolor-600{{ else }}text-mycolor-700 hover:bg-mycolor-200 hover:text-mycolor-800{{ end }} dark:text-gray-200 dark:hover:bg-gray-700">
+           class="flex items-center p-2 rounded-lg group {{ if eq $.RelPermalink .RelPermalink }}text-white bg-mycolor-600{{ else }}text-mycolor-700 hover:bg-mycolor-200 hover:text-mycolor-800{{ end }} ">
           <svg class="w-5 h-5 flex-shrink-0 {{ if eq $.RelPermalink .RelPermalink }}text-white{{ else }}text-mycolor-600 group-hover:text-mycolor-800{{ end }} dark:text-gray-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20">
             <path d="m 16.38731,19.896537 c -0.08848,-0.05848 -0.205629,-0.1923 -0.260332,-0.297381 -0.0547,-0.105084 -0.266049,-0.715797 -0.469661,-1.357143 C 15.178909,16.735084 14.881224,15.941905 14.678608,15.63424 14.340342,15.120595 12.80977,13.751169 12.22019,13.434654 l -0.185132,-0.09939 -0.367714,0.511626 c -0.202243,0.281394 -0.500515,0.63209 -0.662827,0.779324 C 9.9636416,15.570405 8.7034427,15.814008 7.6093197,15.282522 6.6604656,14.821605 6.279319,14.265711 6.4051486,13.526265 6.5075421,12.924541 6.8310424,12.53041 7.2252153,12.527149 c 0.1732497,-0.0015 0.2867574,0.04553 0.568247,0.235094 0.4294156,0.289184 0.7353956,0.385618 1.0769557,0.339416 0.6097283,-0.08247 1.155494,-0.513986 1.685319,-1.332505 0.302325,-0.467055 0.531429,-1.010871 0.996783,-2.3660286 0.18382,-0.5353024 0.524617,-1.4852185 0.757324,-2.1109217 0.232708,-0.6257033 0.4344,-1.1808735 0.448204,-1.2337133 C 12.788058,5.943639 12.625369,5.8672096 12.226559,5.8087998 11.491291,5.7011141 10.818999,6.1687633 10.222794,7.2026259 9.8227073,7.8964056 9.5554618,8.0631032 9.1363125,7.8803332 8.9433614,7.7961971 8.6783361,7.4674437 8.6091302,7.2263818 8.4912674,6.8158332 8.5618762,6.4807897 8.8913286,5.8873448 9.5297607,4.7373256 10.315351,3.9481203 11.154649,3.6136094 c 0.257148,-0.1024882 0.420239,-0.1250863 0.918464,-0.1272693 0.541622,-0.00238 0.646151,0.013641 0.986763,0.1510947 0.514137,0.2074878 0.839954,0.4159314 1.536808,0.9831827 0.731118,0.5951437 1.01424,0.7825174 1.372843,0.90857 0.369207,0.1297807 0.913442,0.096131 1.243075,-0.076857 0.322242,-0.16911 0.727535,-0.5845551 0.969888,-0.9941818 0.567917,-0.9599025 0.707782,-1.0795914 1.118236,-0.9569049 0.495341,0.1480613 0.792871,0.7288735 0.672618,1.3130266 -0.103393,0.5022526 -0.8311,1.6511961 -1.386425,2.1889657 -0.660141,0.6392726 -1.173367,0.8843762 -1.941029,0.9269874 -0.503185,0.02793 -0.689877,8.4e-6 -1.254524,-0.1876222 -0.09674,-0.032147 -0.120164,0.014399 -0.493624,0.9808924 -0.436533,1.1297157 -1.144036,3.0509923 -1.144036,3.1067103 0,0.01979 0.127511,0.143739 0.283356,0.275429 0.658932,0.5568 1.688967,1.65572 1.922032,2.050577 0.290978,0.492967 0.586089,1.284794 1.228909,3.297357 0.288252,0.902466 0.356808,1.167852 0.356808,1.381219 0,0.359385 -0.07684,0.599432 -0.268203,0.83782 -0.269937,0.336279 -0.595336,0.418218 -0.889298,0.223931 z M 0.09222253,16.225283 C -0.02284927,16.057809 -0.03058779,15.857 0.070993,15.674399 l 0.07470308,-0.134288 2.84663762,-0.01532 c 2.1132348,-0.01139 2.875217,0.0019 2.957562,0.05154 0.1928152,0.116239 0.2350588,0.432861 0.086582,0.648952 l -0.095932,0.13962 H 3.06435 0.18815485 Z M 2.3832244,10.811224 c -0.044552,-0.08243 -0.081004,-0.183614 -0.081004,-0.224851 0,-0.168221 0.095918,-0.362615 0.206637,-0.41879 0.078337,-0.03975 1.148923,-0.05971 3.2014061,-0.05971 2.6299869,0 3.09998,0.01225 3.1942838,0.08322 0.1794794,0.135079 0.209877,0.376364 0.078126,0.620135 l -0.081003,0.149878 H 5.6829496 2.4642286 Z M 0.42904607,5.9762447 C 0.32358993,5.7811264 0.32681034,5.6564547 0.44235727,5.460928 l 0.094315,-0.1595971 3.08122503,-0.016546 c 1.6946742,-0.00909 3.1384545,-0.00147 3.2084009,0.016841 0.2616769,0.068687 0.3691834,0.459574 0.1927444,0.7008127 L 6.9285866,6.1261184 H 3.7193174 0.51004981 Z M 15.475333,4.5850941 C 15.232926,4.5159273 14.921541,4.2751139 14.732294,4.0104561 13.771435,2.6667163 14.247671,0.38309962 15.561706,0.03331004 c 0.672891,-0.1791218 1.410071,0.38045648 1.69516,1.28675936 0.553268,1.758846 -0.472385,3.6385681 -1.781533,3.2650247 z M 6.034701,1.9057549 C 5.9251608,1.815352 5.8991936,1.7446821 5.8985066,1.535106 5.8980726,1.4196252 5.9293656,1.3098029 5.9834446,1.2364743 6.0680776,1.1217197 6.1026858,1.1204945 9.2596511,1.1204945 h 3.1906709 l 0.08498,0.13165 c 0.120246,0.1862876 0.112248,0.4545787 -0.018,0.6036883 C 12.415026,1.9729219 12.392818,1.9737134 9.2635954,1.9719957 6.9886794,1.9707326 6.0911392,1.9523342 6.034701,1.9057549 Z"></path>
           </svg>
@@ -61,49 +61,21 @@
       {{ with .Site.GetPage "/troiscompteurs" }}
       <li>
         <a href="{{ .RelPermalink }}" 
-           class="flex items-center p-2 rounded-lg group {{ if eq $.RelPermalink .RelPermalink }}text-white bg-mycolor-600{{ else }}text-mycolor-700 hover:bg-mycolor-200 hover:text-mycolor-800{{ end }} dark:text-gray-200 dark:hover:bg-gray-700">
-          <svg class="w-5 h-5 {{ if .IsHome }}text-white{{ else }}text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white{{ end }}"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            
-            stroke-width="1.35"
-            stroke-linecap="butt"
-            stroke-linejoin="miter"
-            version="1.1">
-            <defs/>
-            <g>
-              <rect
-                x="6.8609543"
-                y="7.315145"
-                width="6.3069668"
-                height="6.5647435"
-                style="stroke-width:1.2" />
-              <rect
-                x="0.55398768"
-                y="4.0327735"
-                width="4.2046442"
-                height="4.3764958"
-                style="stroke-width:1.2" />
-              <rect
-                x="15.270243"
-                y="4.0327735"
-                width="4.2046442"
-                height="4.3764958"
-                style="stroke-width:1.2" />
-              <line
-                x1="4.7586322"
-                y1="6.2210212"
-                x2="6.8609543"
-                y2="10.597517"
-                style="stroke-width:1.2" />
-              <line
-                x1="15.270243"
-                y1="6.2210212"
-                x2="13.167921"
-                y2="10.597517"
-                style="stroke-width:1.2" />
-            </g>
-          </svg>
+           class="flex items-center p-2 rounded-lg group {{ if eq $.RelPermalink .RelPermalink }}text-white bg-mycolor-600{{ else }}text-mycolor-700 hover:bg-mycolor-200 hover:text-mycolor-800{{ end }} ">
+
+          <svg
+  viewBox="0 0 20 20"
+  class="w-5 h-5 flex-shrink-0 {{ if eq $.RelPermalink .RelPermalink }}text-white{{ else }}text-mycolor-600 group-hover:text-mycolor-800{{ end }}" fill="currentColor"
+  stroke="currentColor"
+  stroke-width="1.2"
+>
+  <rect x="6.86" y="7.31" width="6.3" height="6.56" />
+  <rect x="0.55" y="4.03" width="4.2" height="4.37" />
+  <rect x="15.27" y="4.03" width="4.2" height="4.37" />
+  <line x1="4.75" y1="6.22" x2="6.86" y2="10.59" />
+  <line x1="15.27" y1="6.22" x2="13.16" y2="10.59" />
+</svg>
+
           <span class="ms-3 text-sm whitespace-nowrap">Multi-Linky</span>
         </a>
       </li>
