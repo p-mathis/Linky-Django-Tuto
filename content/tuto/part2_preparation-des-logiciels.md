@@ -184,7 +184,7 @@ Plutôt que d'écrire soi-même le {{< focus >}}css{{< /focus >}}, le plus simpl
 - Créer et ouvrir le fichier {{< focus >}}input.css{{< /focus >}} en écriture : {{< cmd >}}nano ~/djangoTIC/ticServer/ticapp/static/src/input.css{{< /cmd >}}
 - Dans le fichier écrire : {{< cmd >}}@import "tailwindcss";{{< /cmd >}}
 - Sauvegarder et fermer
-- En étant toujours dans le dossier {{< focus >}}~/djangoTIC/ticServer{{< /focus >}} lancer l'[interface de ligne de commande](https://fr.wikipedia.org/wiki/Interface_en_ligne_de_commande) en tapant la commande : {{< cmd >}}npx @tailwindcss/cli -i ticapp/static/src/input.css -o ticapp/static/src/output.css --watch{{< /cmd >}}
+- En étant toujours dans le dossier {{< focus >}}~/djangoTIC/ticServer{{< /focus >}} lancer l'[interface de ligne de commande](https://fr.wikipedia.org/wiki/Interface_en_ligne_de_commande) en tapant la commande : {{< cmd >}}npx @tailwindcss/cli -i ticapp/static/src/input.css -o ticapp/static/src/output.css \-\-watch{{< /cmd >}}
 - Le fichier {{< focus >}}output.css{{< /focus >}} a été créé ; c'est ce fichier qui va contenir le css du site
 
 ### Installer flowbite
