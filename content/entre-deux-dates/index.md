@@ -371,14 +371,12 @@ def entre2dates(request):
 
 {% if start and end %}
 
-
     <div class="flex items-center justify-center pt-2 md:pt-4">
         <p>du {{ values.dateStart | date:"l j F Y"}} au 
             {{ values.dateEnd | date:"l j F Y"}} </p>
     </div>
 
     {% include "consommation.html"  %}
-
 
     <div class="flex items-center justify-center pt-2 md:pt-6">
         <p class="font-bold">En valeurs arrondies (kWh)</p>
@@ -469,7 +467,7 @@ def entre2dates(request):
 ### Actualiser le css 
 - Le *css* a été modifié : il faut l'actualiser
 - Se mettre en environnement virtuel : {{<cmd >}}source ~/djangoTIC/venv/bin/activate{{< /cmd >}}
-- Se positionner dans le répertoire *djangoTIC/ticServer : {{< cmd >}}cd ~/djangoTIC/ticServer{{< /cmd >}}
+- Se positionner dans le répertoire *djangoTIC/ticServer* : {{< cmd >}}cd ~/djangoTIC/ticServer{{< /cmd >}}
 - Mettre à jour le fichier *src/ouput.css* : {{< cmd >}}npx @tailwindcss/cli -i ticapp/static/src/input.css -o ticapp/static/src/output.css \-\-minify{{< /cmd >}}
 ### Collecter les fichiers *static*
 - Dans la mesure où on a modifié le *css* et créé un fichier statique *js/datepicker-fr.js*, il faut collecter les fichiers statiques pour les rendre lisibles par *gunicorn*
