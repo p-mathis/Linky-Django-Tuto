@@ -116,6 +116,7 @@ urlpatterns = [
 - On a appellé la fonction {{< focus >}}index{{< /focus >}} de {{< focus >}}views.py{{< /focus >}}
 - Le chemin est {{< focus >}}''{{< /focus >}} : ainsi lorsqu'on tape l'adresse du site sans ajouter un nom de page, on tombe directement sur cette vue
 - Le nom {{< focus >}}name{{< /focus >}} a peu d'importance dans ce tutoriel
+- Le nom {{< focus >}}name{{< /focus >}} permet d'appeler cette URL par son nom plutôt que par son chemin, ce qui facilite la maintenance du code
 #### Modifier le fichier *ticServer/urls.py*
 - Il faut indiquer au fichier *ticServer/urls.py* qu'il doit prendre en compte les url du fichier {{< focus >}}ticapp/urls.py{{< /focus >}}
 - Ouvrir le fichier en écriture : {{< cmd >}}nano ~/djangoTIC/ticServer/ticServer/urls.py{{< /cmd >}}

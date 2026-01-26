@@ -145,12 +145,12 @@ def entre2dates(request):
 
     values = None			# initialisation de values
     
-    if start and end:   # si la requête GET a renvoyé des valeurs 0
+    if start and end:   # si la requête GET a renvoyé des valeurs 
         try:
             # Convertir les dates
 
-            start_date = datetime.strptime(start, '%d/%m/%Y')  # format français au date picker
-            end_date = datetime.strptime(end, '%d/%m/%Y')      # format français au date picker
+            start_date = datetime.strptime(start, '%d/%m/%Y')  # format français du date picker
+            end_date = datetime.strptime(end, '%d/%m/%Y')      # format français du date picker
             
             # Début du jour start (00:00:00)
             start_datetime = timezone.make_aware(datetime.combine(start_date.date(), datetime.min.time()))
