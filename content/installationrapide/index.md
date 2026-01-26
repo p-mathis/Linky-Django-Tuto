@@ -2,7 +2,7 @@
 date = '2025-12-19T18:19:10+01:00'
 draft = false
 title = 'Installation Rapide'
-description = "Installation rapide d'un site django sur une raspberry pour lire les données d'un compteur Linky ; utilisation de picocom (téléinformation client) et  unicorn (serveur)"
+description = "Installation rapide d'un site django sur une raspberry pour lire les données d'un compteur Linky ; utilisation de picocom (téléinformation client) et  gunicorn (serveur)"
 +++
 {{< line >}}
 Ce tutoriel permet d'installer rapidement les éléments nécessaires sur la Raspberry.  
@@ -145,7 +145,7 @@ def conso(dateStart, dateEnd):
 
     kWH = formatNumber((queryEnd["east"] - queryStart["east"])/1000)
     kWHCreux = formatNumber((queryEnd["easf01"] - queryStart["easf01"])/1000)           
-    kWHplein = formatNumber((queryEnd["easf02"] - queryStart["easf02"])/1000)
+    kWHPlein = formatNumber((queryEnd["easf02"] - queryStart["easf02"])/1000)
     
     linkyStart = queryStart["date"]
     linkyEnd = queryEnd["date"]
@@ -180,8 +180,8 @@ def conso(dateStart, dateEnd):
 from django.shortcuts import render
 from django.utils import timezone           
 from .models import Data 
-from .utils import formatNumber, conso      # new
-from datetime import timedelta              # new
+from .utils import formatNumber, conso
+from datetime import timedelta 
 
 def index(request):                        
     now = timezone.now()
@@ -255,11 +255,11 @@ urlpatterns = [
 - Effacer le contenu et le remplacer par : 
 {{< codefile file="ticServer/ticServer/urls.py" lang="python" >}}
 from django.contrib import admin
-from django.urls import path, include   # include : new
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('ticapp.urls')),   # new    
+    path('', include('ticapp.urls')),     
 ]
 {{< /codefile >}}
 ### Gabarits (templates)
@@ -869,7 +869,7 @@ STORAGES = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 {{< /codefile >}}
-- Lancer le *css* (Vérifier de bien être dans *~/djangoTIC/ticServer*) : {{< cmd >}}npx @tailwindcss/cli -i ticapp/static/src/input.css -o ticapp/static/src/output.css --minify{{< /cmd >}}
+- Lancer le *css* (Vérifier de bien être dans *~/djangoTIC/ticServer*) : {{< cmd >}}npx @tailwindcss/cli -i ticapp/static/src/input.css -o ticapp/static/src/output.css \-\-minify{{< /cmd >}}
 - Effectuer les migrations :  
 {{< cmd >}}python ~/djangotTIC/ticServer/manage.py makemigrations{{< /cmd >}}  
 {{< cmd >}}python ~/djangotTIC/ticServer/manage.py migrate{{< /cmd >}} 

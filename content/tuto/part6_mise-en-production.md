@@ -278,5 +278,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 - Après ces modifications, il faut collecter les fichiers statiques
 - Dans {{< focus >}}~/djangoTIC/ticServer{{< /focus >}} lancer la commande : {{< cmd >}}python manage.py collectstatic \-\-noinput{{< /cmd >}}
 - Cette commande va créer un dossier {{< focus >}}staticfiles{{< /focus >}} à la racine du site. C'est ce dossier qui va servir les fichiers statiques au site en production.  
+- Relancer le serveur : {{< cmd >}}sudo systemctl restart django-ticserver{{< /cmd >}}
 {{< line >}}
 {{< gallery images="tic_jour.jpg, tic_hier.jpg, tic_lasthour.jpg, tic_last24hours.jpg" >}}

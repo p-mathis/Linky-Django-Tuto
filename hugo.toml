@@ -11,6 +11,8 @@ title = 'Data Linky'
     style = "friendly"  
     lineNos = false
     lineNumbersInTable = false
+  [markup.goldmark.parser]
+    autoHeadingID = true
 
 [build]
   [build.buildStats]

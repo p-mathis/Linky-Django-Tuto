@@ -312,7 +312,7 @@ def conso(dateStart, dateEnd):
 
     kWH = formatNumber((queryEnd["east"] - queryStart["east"])/1000)
     kWHCreux = formatNumber((queryEnd["easf01"] - queryStart["easf01"])/1000)           
-    kWHplein = formatNumber((queryEnd["easf02"] - queryStart["easf02"])/1000)
+    kWHPlein = formatNumber((queryEnd["easf02"] - queryStart["easf02"])/1000)
     
     linkyStart = queryStart["date"]
     linkyEnd = queryEnd["date"]

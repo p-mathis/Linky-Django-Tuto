@@ -58,6 +58,9 @@
   ul {
     @apply list-inside list-disc;
   }
+  ul ul {
+    @apply list-inside list-[square] ml-6;
+  }
   
   /* les ancres souligner */
   a {
