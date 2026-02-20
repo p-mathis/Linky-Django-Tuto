@@ -1,8 +1,9 @@
 +++
 date = '2025-12-16T22:10:22+01:00'
 draft = false
-title = 'Partie 3 : Capture des Données'
-description = "Structure des données fournies par la TIC d’un Linky ; script de capture des données en ne conservant que les étiquettes souhaitées (triphasé avec mode jour/nuit)"
+h1 = 'Partie 3 : Capture des Données'
+description = "Format et structure des trames téléinformation client (TIC) du Linky. Écriture d'un script Python pour capturer et filtrer les étiquettes utiles, avec gestion du triphasé et du mode heures creuses/pleines."
+title = "Partie 3 : Décodage et Capture des Trames TIC"
 +++
 {{< line >}}
 ## Structure des données

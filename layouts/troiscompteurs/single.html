@@ -5,7 +5,7 @@
   <article class="w-full">
     <header class="mb-8">
       <h1 class="hidden lg:block w-full uppercase text-center py-8 lg:py-16 bg-mycolor-700 text-mywhite mb-8">
-        {{ .Title }}
+        {{ .Params.h1 | default .Title }}
       </h1>
     </header>
 

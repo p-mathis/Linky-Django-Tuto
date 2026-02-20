@@ -1,8 +1,9 @@
 +++
 date = '2026-01-07T09:12:36+01:00'
 draft = false
-title = 'Brancher plusieurs Linky sur une seule Raspberry'
-description = "Lecture de trois compteurs Linky sur une même raspberry avec un PiTinfo et deux modules USB (dongle)"
+h1 = 'Trois Linky, une seule Raspberry Pi'
+title = 'Lire plusieurs compteurs Linky sur un seul Raspberry Pi'
+description = "Comment connecter et lire simultanément trois compteurs Linky sur un Raspberry Pi : un shield PiTInfo sur le GPIO et deux dongles USB série. Configuration Django pour gérer plusieurs flux TIC."
 +++
 Un [module PitInfo](https://hallard.me/tag/pitinfo/) ne peut lire les données que d'un seul [compteur Linky](https://fr.wikipedia.org/wiki/Linky), et il n'est possible d'installer qu'un seul *PiTinfo* par [Raspberry pi](https://fr.wikipedia.org/wiki/Raspberry_Pi). Si on veut récupérer les [TéléInformations Client (TIC)](https://www.kelwatt.fr/guide/compteur/electricite/linky-prise-secrete) de plusieurs compteurs, on peut passer par des modules branchés en USB, notamment le [uTeleInfo](https://www.tindie.com/products/hallard/micro-teleinfo-v30/) de [Charles Hallard](https://hallard.me/).
 

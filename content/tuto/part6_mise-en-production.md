@@ -1,8 +1,9 @@
 +++
 date = '2025-12-18T08:54:18+01:00'
 draft = false
-title = 'Partie 6 : Mise en Prodution'
-description = "Mise en production avec gunicorn, whitenoise et un service systemd. Utilisation d’un fichier .env ; modification de settings.py ;  reconfiguration des fichiers statiques"
+h1 = 'Partie 6 : Mise en Prodution'
+title = 'Partie 6 : Mise en Production avec Gunicorn et Systemd'
+description = "Déploiement du serveur Django en production : configuration de Gunicorn, gestion des fichiers statiques avec WhiteNoise, sécurisation des secrets via un fichier .env et adaptation de settings.py."
 +++
 
 {{< line >}}

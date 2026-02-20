@@ -1,8 +1,9 @@
 +++
 date = '2025-12-15T22:58:48+01:00'
 draft = false
-title = 'Partie 2 : Préparation des Logiciels'
-description = "Installation de Django, tailwind-css et flowbite sur une Raspberry pi pour créer un serveur. Utilisation de la commande picocom pour lire les données d’un optocoupleur"
+h1 = 'Partie 2 : Préparation des Logiciels'
+description = "Installation de l'environnement Python, Django, Tailwind CSS et Flowbite sur Raspberry Pi. Vérification de la lecture du port série avec picocom pour valider la réception des trames TIC."
+title = "Partie 2 : Installation de Django, Tailwind CSS et Flowbite"
 +++
 {{< line >}}
 

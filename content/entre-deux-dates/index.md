@@ -1,8 +1,9 @@
 +++
 date = '2026-01-22T18:01:54+01:00'
 draft = false
-title = 'Consommation entre deux dates'
-description = "Lire la consommation du compteur Linky entre deux dates séléctionnées par le date-picker de flowbite ; site web Django installé sur Raspberry Pi."
+h1 = 'Consommation entre deux dates'
+title = 'Afficher la Consommation Linky entre Deux Dates avec Django'
+description = "Comment filtrer et afficher la consommation électrique d'un compteur Linky sur une plage de dates choisie via le date picker Flowbite, dans un site Django hébergé sur Raspberry Pi."
 +++
 
 ## Objectif et Moyens

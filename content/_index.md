@@ -1,8 +1,9 @@
 +++
-date = '2025-12-15T11:20:34+01:00'
+date = '2025-12-15T22:37:08+01:00'
 draft = false
-title = 'Tutoriel Linky Raspberry'
-description = "Tutoriel pour capturer avec une raspberry pi les données téléinformation client (TIC) d’un compteur linky, les stocker dans une base de données et les lire sur un serveur Django"
+title = 'Lire le compteur Linky avec un Raspberry Pi et PiTInfo'
+description = "Guide complet pour connecter un compteur Linky à un Raspberry Pi via le module PiTInfo, collecter la téléinformation client (TIC) et créer un serveur de monitoring énergétique."
+h1 = "Tutoriel Linky Raspberry"
 +++
 
 {{< line >}}

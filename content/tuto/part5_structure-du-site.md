@@ -1,8 +1,9 @@
 +++
 date = '2025-12-17T10:42:24+01:00'
 draft = false
-title = 'Partie 5 : Structure Du Site'
-description = "Notion de mode MTV. Écriture du fichier views.py avec les différentes fonctions, des templates (gabarits) qui vont constituer le site pour visualiser les données Linky"
+h1 = 'Partie 5 : Structure Du Site'
+description = "Déploiement du serveur Django en production : configuration de Gunicorn, gestion des fichiers statiques avec WhiteNoise, sécurisation des secrets via un fichier .env et adaptation de settings.py."
+title = 'Partie 5 : Vues, Templates et Visualisation des Données'
 +++
 {{< line >}}
 ## Principe de fonctionnement de Django
