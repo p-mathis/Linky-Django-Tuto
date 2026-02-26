@@ -90,8 +90,8 @@ dtoverlay=disable-bt
 - Créer l'application *ticapp* : {{< cmd >}}python manage.py startapp ticapp{{< /cmd >}}
 - Créer les différents dossiers : {{< cmd >}}mkdir -p ~/djangoTIC/ticServer/ticapp/templates ~/djangoTIC/ticServer/ticapp/management/commands ~/djangoTIC/ticServer/ticapp/static/src ~/djangoTIC/ticServer/ticapp/static/images{{< /cmd >}}
 - Initialiser les modules python :  
-{{< cmd >}}touch djangoTIC/ticServer/ticapp/management/__init__.py{{< /cmd >}}  
-{{< cmd >}}touch djangoTIC/ticServer/ticapp/management/commands/__init__.py{{< /cmd >}}
+{{< cmd >}}touch djangoTIC/ticServer/ticapp/management/\_\_init\_\_.py{{< /cmd >}}  
+{{< cmd >}}touch djangoTIC/ticServer/ticapp/management/commands/\_\_init\_\_.py{{< /cmd >}}
 - Installer *tailwind* et *flowbite* : {{< cmd >}}npm install tailwindcss @tailwindcss/cli flowbite{{< /cmd >}}
 - Copier *flowbite* vers *static* : {{< cmd >}}cp -r ~djangoTIC/ticServer/node_modules/flowbite ~djangoTIC/ticServer/ticapp/static/{{< /cmd >}}
 - Créer le fichier *input.css* : {{< cmd >}}nano ~/djangoTIC/ticServer/ticapp/static/src/input.css{{< /cmd >}}
